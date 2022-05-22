@@ -1,4 +1,8 @@
 import { createRouter, createWebHashHistory } from "vue-router"
+
+import webgl from "./branch/webgl";
+import three from "./branch/three";
+
 const routes = [
     {
         path: "/",
@@ -11,14 +15,9 @@ const routes = [
                 redirect: '/',
                 component: () => import(/* webpackChunkName: "about" */ "../views/home/home.vue"),
             }, //默认首页
-            {
-                path: "/webgl",
-                component: () => import(/* webpackChunkName: "about" */ "../views/webgl/index.vue"),
-            },
-            // {
-            //     path: "/three2",
-            //     component: () => import(/* webpackChunkName: "about" */ "../views/three/three2.vue"),
-            // },
+
+            ...webgl,
+            ...three,
         ],
         meta: { hidden: false, title: "首页" },
     },

@@ -1,17 +1,30 @@
 <template>
+
   <div id="webgl">
-    1231
+    12312
   </div>
+
 </template>
+
+<script>
+export default {
+  name: 'webgl'
+}
+</script>
+
 
 <script setup lang="ts">
 
-  const canvas = document.querySelector("#canvas");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+
+
+
+
+
+
 
 </script>
 
 <style scoped>
+
 
 </style>
