@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router"
-
+import webgpu from "./branch/webgpu";
 import webgl from "./branch/webgl";
 import three from "./branch/three";
 
@@ -15,7 +15,7 @@ const routes = [
                 redirect: '/',
                 component: () => import(/* webpackChunkName: "about" */ "../views/home/home.vue"),
             }, //默认首页
-
+            ...webgpu,
             ...webgl,
             ...three,
         ],

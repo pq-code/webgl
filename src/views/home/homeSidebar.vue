@@ -1,6 +1,19 @@
 <template>
   <div>
     <el-menu :router="true" :default-active="menuActive" class="menu">
+      <el-sub-menu index="/webgpu">
+        <template #title>
+          <i class="iconfont icon-yingyong margin4"></i>
+          webgpu
+        </template>
+        <el-menu-item index="/webgpu">
+          webgpu
+        </el-menu-item>
+        <el-menu-item index="/webgpu">
+          webgpu
+        </el-menu-item>
+      </el-sub-menu>
+
       <el-sub-menu index="/webgl">
         <template #title>
           <i class="iconfont icon-yingyong margin4"></i>
