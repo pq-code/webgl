@@ -1,6 +1,6 @@
 <template>
   <div>
-    1312
+    webgpu
   </div>
 </template>
 <script setup lang='ts'>

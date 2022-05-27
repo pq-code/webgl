@@ -1,6 +1,19 @@
 <template>
   <div>
     <el-menu :router="true" :default-active="menuActive" class="menu">
+      <el-sub-menu index="/lingo3D">
+        <template #title>
+          <i class="iconfont icon-yingyong margin4"></i>
+          lingo3D
+        </template>
+        <el-menu-item index="/lingo3D">
+          lingo3D
+        </el-menu-item>
+        <el-menu-item index="/lingo3D">
+          lingo3D
+        </el-menu-item>
+      </el-sub-menu>
+
       <el-sub-menu index="/webgpu">
         <template #title>
           <i class="iconfont icon-yingyong margin4"></i>

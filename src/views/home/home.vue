@@ -1,11 +1,12 @@
 <template>
   <div class="homeContainer">
     <div class="homeHeard">
+      <el-button @click="screen">全屏</el-button>
     </div> 
      <div class="hemeLeft">
        <homeSidebar/>
     </div>
-    <div class="hemeMain">
+    <div id="main" class="hemeMain">
       <!-- <el-page-header :icon="ArrowLeft" content="detail" style="margin:10px"/> -->
       <el-main style="width:100%;height:100%">
         <router-view :key="key" />
@@ -20,11 +21,18 @@ import { storeToRefs } from 'pinia'
 import { useStore } from '../../store/index.ts'
 import { ArrowLeft } from '@element-plus/icons-vue'
 import homeSidebar from './homeSidebar.vue'
+import screenfull from 'screenfull';
 
 const mainStore = useStore()
 const { count } = storeToRefs(mainStore);
 console.log(count.value);
 
+const screen = function () {
+  if (screenfull.isEnabled) {
+    const element = document.getElementById('main');
+    screenfull.request(element);
+  }
+}
 
 const goBack = () => {
   console.log('go back')

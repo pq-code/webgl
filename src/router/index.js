@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router"
+import lingo3D from "./branch/lingo3D";
 import webgpu from "./branch/webgpu";
 import webgl from "./branch/webgl";
 import three from "./branch/three";
@@ -15,6 +16,7 @@ const routes = [
                 redirect: '/',
                 component: () => import(/* webpackChunkName: "about" */ "../views/home/home.vue"),
             }, //默认首页
+            ...lingo3D,
             ...webgpu,
             ...webgl,
             ...three,

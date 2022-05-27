@@ -1,7 +1,7 @@
 <template>
 
   <div id="webgl">
-    12312
+    webgl
   </div>
 
 </template>
