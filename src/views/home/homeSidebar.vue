@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-menu :router="true" :default-active="menuActive" class="menu">
+    <el-menu :router="true" class="menu">
       <el-sub-menu index="/lingo3D">
         <template #title>
           <i class="iconfont icon-yingyong margin4"></i>
@@ -39,18 +39,18 @@
           webg2
         </el-menu-item>
       </el-sub-menu>
-      <el-sub-menu index="/three">
-        <template #title>
-          <i class="iconfont icon-yingyong margin4"></i>
-          three
-        </template>
-        <el-menu-item index="/three1">
-          three1
-        </el-menu-item>
-        <el-menu-item index="/three2">
-          three2
-        </el-menu-item>
-      </el-sub-menu>
+<!--      <el-sub-menu index="/three">-->
+<!--        <template #title>-->
+<!--          <i class="iconfont icon-yingyong margin4"></i>-->
+<!--          three-->
+<!--        </template>-->
+<!--        <el-menu-item index="/three1">-->
+<!--          three1-->
+<!--        </el-menu-item>-->
+<!--        <el-menu-item index="/three2">-->
+<!--          three2-->
+<!--        </el-menu-item>-->
+<!--      </el-sub-menu>-->
     </el-menu>
   </div>
 </template>

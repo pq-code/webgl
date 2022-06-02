@@ -1,41 +1,64 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from "path";
+import compressPlugin from "vite-plugin-compression"; //静态资源压缩
 
-// 路径查找
-const pathResolve = (dir: string): string => {
-  return resolve(__dirname, ".", dir);
-};
-
-// 设置别名
-const alias: Record<string, string> = {
-  "@": pathResolve("src")
-};
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [vue()],
-  css: {
-    // css预处理器
-    preprocessorOptions: {
-      less: {
-        charset: false,
-        additionalData: '@import "./src/styles/var.less";' // 让全局less 变量生效
+// // 路径查找
+// const pathResolve = (dir: string): string => {
+//   return resolve(__dirname, ".", dir);
+// };
+//
+// // 设置别名
+// const alias: Record<string, string> = {
+//   "@": pathResolve("src")
+// };
+export default defineConfig(({ command }) => {
+  const prodMock = true
+  return {
+    plugins: [vue(),compressPlugin({
+      ext: ".gz",
+      verbose: true,
+      disable: false,
+      threshold: 10240,
+      algorithm: 'gzip',
+      // deleteOriginFile: command !== 'serve', // 是否删除原始文件
+      deleteOriginFile: false
+    })],
+    // 打包配置
+    build: {
+      terserOptions: {
+        compress: {
+          drop_console: command !== 'serve',
+          // 默认是true
+          drop_debugger: command !== 'serve'
+        }
+      }
+    },
+    server: {
+      host: '0.0.0.0',
+      port: 3000,
+      proxy: {
+        '/api': {
+          target: 'https://pqartstation.cn:3005',
+          changeOrigin: true,
+          // secure: false,
+          rewrite: (path) => path.replace(/^\/api/, '/'),
+        },
+      }
+    },
+    css: {
+      // css预处理器
+      preprocessorOptions: {
+        less: {
+          charset: false,
+          additionalData: '@import "./src/styles/var.less";' // 让全局less 变量生效
+        },
       },
     },
-  },
-  server: {
-    port: 8080,
-    host: '0.0.0.0',
-    proxy: {
-      '/api/': {
-        target: 'http://192.168.27.77:5083/api/',
-        changeOrigin: true,
-        rewrite: (p) => p.replace(/^\/api/, ''),
-      },
-    },
-  },
-  resolve: {
-    alias
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "src")
+      }
+    }
   }
 })

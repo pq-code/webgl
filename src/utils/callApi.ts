@@ -13,7 +13,6 @@
 // export default callApi;
 
 import axios from 'axios';
-import ps from 'qs';
 
 export const callApi = ({ url = '/', prefixUrl = '/', ...option }) => {
 	if (!url) {

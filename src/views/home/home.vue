@@ -9,7 +9,7 @@
     <div id="main" class="hemeMain">
       <!-- <el-page-header :icon="ArrowLeft" content="detail" style="margin:10px"/> -->
       <el-main style="width:100%;height:100%">
-        <router-view :key="key" />
+        <router-view/>
       </el-main>
     </div> 
   </div>
@@ -18,7 +18,7 @@
 <script lang="ts" setup>
 import { ref, reactive } from 'vue';
 import { storeToRefs } from 'pinia'
-import { useStore } from '../../store/index.ts'
+import { useStore } from '../../store/index'
 import { ArrowLeft } from '@element-plus/icons-vue'
 import homeSidebar from './homeSidebar.vue'
 import screenfull from 'screenfull';
@@ -29,7 +29,7 @@ console.log(count.value);
 
 const screen = function () {
   if (screenfull.isEnabled) {
-    const element = document.getElementById('main');
+    const element:any = document.getElementById('main');
     screenfull.request(element);
   }
 }

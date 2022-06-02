@@ -43,9 +43,7 @@ export const useStore = defineStore('main', {
 
             //建议使用
             this.$patch(state => {
-                state.count += num
-                state.foo = 'hello'
-                state.arr.push(4)
+
             })
         }
     },
