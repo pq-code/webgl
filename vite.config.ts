@@ -50,8 +50,12 @@ export default defineConfig(({ command }) => {
       // css预处理器
       preprocessorOptions: {
         less: {
-          charset: false,
-          additionalData: '@import "./src/styles/var.less";' // 让全局less 变量生效
+          lessOptions: {
+            modifyVars: {
+              'primary-color': '#ec6800'
+            },
+            javascriptEnabled: true,
+          },
         },
       },
     },

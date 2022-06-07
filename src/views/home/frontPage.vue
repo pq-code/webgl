@@ -1,6 +1,8 @@
 <template>
   <div class="frontPage" @click="frontPage">
-    这是一个首页
+    <div class="frontPageTile">
+      这是一个首页
+    </div>
   </div>
 </template>
 
@@ -17,10 +19,15 @@ const router = useRouter()
     }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .frontPage {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to bottom right, #ffffff, #b4b4b4);
+    background-image: linear-gradient(to bottom right, #ff7206, #ff4120);
+    .frontPageTile {
+      color: rgba(208, 208, 208, 0.55);
+      font-size: 40px;
+      font-weight: 900;
+    }
   }
 </style>

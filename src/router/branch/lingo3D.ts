@@ -9,10 +9,10 @@ const lingo3D = [
         path: "/lingo3D",
         component: () => import(/* webpackChunkName: "about" */ "../../views/lingo3D/index.vue"),
       },
-      // {
-      //   path: "/three2",
-      //   component: () => import(/* webpackChunkName: "about" */ "../../views/three/three2.vue"),
-      // },
+      {
+        path: "/lingo3D2",
+        component: () => import(/* webpackChunkName: "about" */ "../../views/lingo3D/index2.vue"),
+      },
     ],
     meta: { hidden: false, title: "webgl" },
   },

@@ -9,7 +9,7 @@
         <el-menu-item index="/lingo3D">
           lingo3D
         </el-menu-item>
-        <el-menu-item index="/lingo3D">
+        <el-menu-item index="/lingo3D2">
           lingo3D
         </el-menu-item>
       </el-sub-menu>
