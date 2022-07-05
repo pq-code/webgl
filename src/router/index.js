@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router"
 import lingo3D from "./branch/lingo3D";
 import webgpu from "./branch/webgpu";
 import webgl from "./branch/webgl";
+import pmaoUI from "./branch/pmaoui";
 // import three from "./branch/three";
 
 const routes = [
@@ -20,6 +21,7 @@ const routes = [
             ...lingo3D,
             ...webgpu,
             ...webgl,
+            ...pmaoUI
             // ...three,
         ],
         meta: { hidden: false, title: "首页" },
