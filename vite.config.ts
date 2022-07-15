@@ -36,7 +36,7 @@ export default defineConfig(({ command }) => {
     },
     server: {
       host: '0.0.0.0',
-      port: 3000,
+      port: 7000,
       proxy: {
         '/api': {
           target: 'https://pqartstation.cn:3005',

@@ -3,6 +3,7 @@ import lingo3D from "./branch/lingo3D";
 import webgpu from "./branch/webgpu";
 import webgl from "./branch/webgl";
 import pmaoUI from "./branch/pmaoui";
+import pmaoUIhome from  "./branch/pmao-ui"
 // import three from "./branch/three";
 
 const routes = [
@@ -26,6 +27,7 @@ const routes = [
         ],
         meta: { hidden: false, title: "首页" },
     },
+    ...pmaoUIhome
 ]
 
 const router = createRouter({
