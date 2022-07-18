@@ -12,5 +12,12 @@ const webgl = [
     ],
     meta: { hidden: false, title: "webgl" },
   },
+  {
+    path: "/trajectoryMotion",
+    component: () => import(/* webpackChunkName: "about" */ "../../views/webgl/trajectoryMotion/index.vue"),
+    name: "trajectoryMotion",
+    // leaf: true,//只有一个节点
+    meta: { hidden: false, title: "trajectoryMotion" },
+  },
 ]
 export default webgl;

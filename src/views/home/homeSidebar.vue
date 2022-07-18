@@ -40,10 +40,6 @@
                         title: 'webgpu',
                         router: '/webgpu',
                     },
-                    {
-                        title: 'webgpu',
-                        router: '/webgpu',
-                    }
                 ]
             },
             {
@@ -51,8 +47,8 @@
                 router: "/webgl",
                 options: [
                     {
-                        title: 'webgl',
-                        router: '/webgl',
+                        title: 'trajectoryMotion',
+                        router: '/trajectoryMotion',
                     },
                     {
                         title: 'webgl',
