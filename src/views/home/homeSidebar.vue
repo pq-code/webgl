@@ -15,58 +15,10 @@
 </template>
 <script setup lang='ts'>
     import {reactive} from "vue";
+    import {navigation} from "@/views/home/navigation";
 
     let pdata = reactive({
-        dataList:[
-            {
-                title: 'lingo3D',
-                router: "/lingo3D",
-                options: [
-                    {
-                        title: 'lingo3D',
-                        router: '/lingo3D',
-                    },
-                    {
-                        title: 'lingo3D',
-                        router: '/lingo3D',
-                    }
-                ]
-            },
-            {
-                title: 'webgpu',
-                router: "/webgpu",
-                options: [
-                    {
-                        title: 'webgpu',
-                        router: '/webgpu',
-                    },
-                ]
-            },
-            {
-                title: 'webgl',
-                router: "/webgl",
-                options: [
-                    {
-                        title: 'trajectoryMotion',
-                        router: '/trajectoryMotion',
-                    },
-                    {
-                        title: 'webgl',
-                        router: '/webgl2',
-                    }
-                ]
-            },
-            {
-                title: 'UI',
-                router: "/pmaoUI",
-                options: [
-                    {
-                        title: 'pmaoUI',
-                        router: '/pmaoUI',
-                    },
-                ]
-            },
-        ]
+        dataList: navigation
     })
 </script>
 <style scoped>
