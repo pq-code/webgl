@@ -1,20 +1,19 @@
 <template>
 
-  <div id="trajectoryMotion" />
+    <div id="objectRendering" />
 
 </template>
 
 <script setup>
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import {onMounted} from "vue";
-// import {Stats} from "fs";
+    import * as THREE from "three";
+    import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+    import { onMounted } from "vue";
+    // import {Stats} from "fs";
 
 
     // 创建场景对象Scene
     var scene = new THREE.Scene();
 
-    // const url = 'https://cdn.huodao.hk/upload_img/20220621/6bd594e62ea5654c03d7b82718443751.png?proportion=1.99'
     const url = 'https://cdn.huodao.hk/upload_img/20220621/6bd594e62ea5654c03d7b82718443751.png?proportion=1.99'
     const geometry = new THREE.SphereGeometry(5, 32, 32)
     const texture = new THREE.TextureLoader().load(url)
@@ -75,7 +74,7 @@ import {onMounted} from "vue";
     renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色
 
     onMounted(()=>{
-        let trajectoryMotion = document.getElementById( 'trajectoryMotion' );
+        let trajectoryMotion = document.getElementById( 'objectRendering' );
         trajectoryMotion.appendChild( renderer.domElement );
     })
 
@@ -100,7 +99,6 @@ import {onMounted} from "vue";
     controls.enableDamping = true
     // 相机向外移动极限
     controls.maxDistance = 4.5
-
 
 
 </script>

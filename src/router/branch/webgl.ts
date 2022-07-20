@@ -19,5 +19,12 @@ const webgl = [
     // leaf: true,//只有一个节点
     meta: { hidden: false, title: "trajectoryMotion" },
   },
+  {
+    path: "/objectRendering",
+    component: () => import(/* webpackChunkName: "about" */ "../../views/webgl/objectRendering/index.vue"),
+    name: "objectRendering",
+    // leaf: true,//只有一个节点
+    meta: { hidden: false, title: "objectRendering" },
+  },
 ]
 export default webgl;

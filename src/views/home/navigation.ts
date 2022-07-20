@@ -32,9 +32,9 @@ export const navigation = [
                 router: '/trajectoryMotion',
             },
             {
-                title: 'webgl',
-                router: '/webgl2',
-            }
+                title: 'objectRendering',
+                router: '/objectRendering',
+            },
         ]
     },
     {

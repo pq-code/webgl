@@ -8,10 +8,11 @@
     </div>
     <div id="main" class="hemeMain">
       <!-- <el-page-header :icon="ArrowLeft" content="detail" style="margin:10px"/> -->
-      <el-main style="width:100%;height:100%">
         <router-view/>
-      </el-main>
-    </div> 
+<!--      <el-main style="width:100%;height:100%">-->
+<!--        <router-view/>-->
+<!--      </el-main>-->
+    </div>
   </div>
 </template>
 
