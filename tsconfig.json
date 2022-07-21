@@ -9,6 +9,14 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "importHelpers": true,
+    // 编译过程中打印文件名
+    "listFiles": true,
+    // 移除注释
+    "removeComments": true,
+    "suppressImplicitAnyIndexErrors": true,
+    // 允许编译javascript文件
+    "allowJs": true,
     "esModuleInterop": true,
     "lib": [
       "esnext",

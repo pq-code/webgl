@@ -4,11 +4,11 @@
 
 </template>
 
-<script setup>
+<script setup >
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import {onMounted} from "vue";
-import Stats from "three/examples/jsm/libs/stats.module";
+import Stats from "three/examples/jsm/libs/stats.module.js";
 // import {Stats} from "fs";
 
 

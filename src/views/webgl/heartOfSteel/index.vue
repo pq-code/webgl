@@ -7,7 +7,7 @@
 <script setup>
     import { onMounted } from "vue";
     import * as THREE from "three";
-    import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+    import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
     import Stats from 'three/examples/jsm/libs/stats.module.js';
     import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHelper.js';
     import { RectAreaLightUniformsLib } from 'three/examples/jsm/lights/RectAreaLightUniformsLib.js';
