@@ -8,11 +8,13 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import {onMounted} from "vue";
+import Stats from "three/examples/jsm/libs/stats.module";
 // import {Stats} from "fs";
 
 
     // 创建场景对象Scene
     var scene = new THREE.Scene();
+    let stats = new Stats(); // 性能查看插件
 
     // const url = 'https://cdn.huodao.hk/upload_img/20220621/6bd594e62ea5654c03d7b82718443751.png?proportion=1.99'
     const url = 'https://cdn.huodao.hk/upload_img/20220621/6bd594e62ea5654c03d7b82718443751.png?proportion=1.99'
@@ -77,6 +79,9 @@ import {onMounted} from "vue";
     onMounted(()=>{
         let trajectoryMotion = document.getElementById( 'trajectoryMotion' );
         trajectoryMotion.appendChild( renderer.domElement );
+        stats.dom.style.top = '67px';
+        stats.dom.style.left = '160px'
+        trajectoryMotion.appendChild( stats.dom );
     })
 
     // 辅助坐标系  参数250表示坐标系大小，可以根据场景大小去设置
@@ -93,6 +98,7 @@ import {onMounted} from "vue";
         // sphere.rotateY(0.001 * t);//旋转角速度0.001弧度每毫秒
         // sphere.rotateZ(0.001 * t);//旋转角速度0.001弧度每毫秒
         requestAnimationFrame(render);
+        stats.update();
     }
     render();
     let controls = new OrbitControls(camera,renderer.domElement);//创建控件对象

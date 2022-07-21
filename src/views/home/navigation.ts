@@ -32,8 +32,8 @@ export const navigation = [
                 router: '/trajectoryMotion',
             },
             {
-                title: 'objectRendering',
-                router: '/objectRendering',
+                title: 'heartOfSteel',
+                router: '/heartOfSteel',
             },
         ]
     },

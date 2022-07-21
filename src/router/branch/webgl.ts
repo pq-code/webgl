@@ -20,11 +20,11 @@ const webgl = [
     meta: { hidden: false, title: "trajectoryMotion" },
   },
   {
-    path: "/objectRendering",
-    component: () => import(/* webpackChunkName: "about" */ "../../views/webgl/objectRendering/index.vue"),
-    name: "objectRendering",
+    path: "/heartOfSteel",
+    component: () => import(/* webpackChunkName: "about" */ "../../views/webgl/heartOfSteel/index.vue"),
+    name: "heartOfSteel",
     // leaf: true,//只有一个节点
-    meta: { hidden: false, title: "objectRendering" },
+    meta: { hidden: false, title: "heartOfSteel" },
   },
 ]
 export default webgl;
