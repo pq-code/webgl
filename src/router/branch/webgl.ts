@@ -13,6 +13,13 @@ const webgl = [
     meta: { hidden: false, title: "webgl" },
   },
   {
+    path: "/panoramiciewing",
+    component: () => import(/* webpackChunkName: "about" */ "../../views/webgl/panoramiciewing/index.vue"),
+    name: "panoramiciewing",
+    // leaf: true,//只有一个节点
+    meta: { hidden: false, title: "panoramiciewing" },
+  },
+  {
     path: "/trajectoryMotion",
     component: () => import(/* webpackChunkName: "about" */ "../../views/webgl/trajectoryMotion/index.vue"),
     name: "trajectoryMotion",

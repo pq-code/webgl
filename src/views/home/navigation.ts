@@ -35,6 +35,10 @@ export const navigation = [
                 title: 'heartOfSteel',
                 router: '/heartOfSteel',
             },
+            {
+                title: 'panoramiciewing',
+                router: '/panoramiciewing',
+            },
         ]
     },
     {

@@ -110,20 +110,3 @@ import Stats from "three/examples/jsm/libs/stats.module";
 
 
 </script>
-
-
-<script setup lang="ts">
-
-
-
-
-
-
-
-
-</script>
-
-<style scoped>
-
-
-</style>

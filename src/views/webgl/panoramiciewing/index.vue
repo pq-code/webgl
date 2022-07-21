@@ -1,0 +1,105 @@
+<template>
+
+    <div id="panoramiciewing" />
+
+</template>
+
+<script setup>
+    import { onMounted } from "vue";
+    import * as THREE from "three";
+    import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+    import Stats from 'three/examples/jsm/libs/stats.module.js';
+
+
+    // 创建场景对象Scene
+    let scene = new THREE.Scene();
+    let stats = new Stats(); // 性能查看插件
+
+    // 窗口数据
+    let width = window.innerWidth; //窗口宽度
+    let height = window.innerHeight; //窗口高度
+    let k = width / height; //窗口宽高比
+    let s = 100; //三维场景显示范围控制系数，系数越大，显示的范围越大
+
+    // 创建渲染器对象
+    let renderer = new THREE.WebGLRenderer({
+        antialias: true, // true/false表示是否开启反锯齿
+        alpha: false, // true/false 表示是否可以设置背景色透明
+        precision: 'highp', // highp/mediump/lowp 表示着色精度选择
+        premultipliedAlpha: true, // true/false 表示是否可以设置像素深度（用来度量图像的分辨率）
+        preserveDrawingBuffer: true, // true/false 表示是否保存绘图缓冲
+        maxLights: 4, // 最大灯光数
+        stencil: false, // false/true 表示是否使用模板字体或图案
+    });
+
+    renderer.setSize(width, height);//设置渲染区域尺寸
+    renderer.setPixelRatio( window.devicePixelRatio );// 设置设备相数比
+    // renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色
+    renderer.setAnimationLoop( animation ); // 设置动画
+
+
+    let onWindowResize = function() {
+        // 重置渲染器输出画布canvas尺寸
+        renderer.setSize(window.innerWidth,window.innerHeight);
+        // 全屏情况下：设置观察范围长宽比aspect为窗口宽高比
+        camera.aspect = window.innerWidth/window.innerHeight;
+        // 渲染器执行render方法的时候会读取相机对象的投影矩阵属性projectionMatrix
+        // 但是不会每渲染一帧，就通过相机的属性计算投影矩阵(节约计算资源)
+        // 如果相机的一些属性发生了变化，需要执行updateProjectionMatrix ()方法更新相机的投影矩阵
+        camera.updateProjectionMatrix ();
+    };
+
+    window.addEventListener( 'resize', onWindowResize );
+
+
+    function animation( time ) {
+        const mesh = scene.getObjectByName( 'meshKnot' );
+        mesh.rotation.y = time / 1000;
+        renderer.render( scene, camera );
+        stats.update();
+    }
+
+    // 初始化透视相机
+    const camera = new THREE.PerspectiveCamera(s, width / height, 0.1, 1000)
+    // let camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);
+    camera.position.set( 0, 16, - 25 ); //设置相机位置
+    // camera.lookAt(scene.position); //设置相机方向(指向的场景对象)
+
+    onMounted(()=> {
+        let trajectoryMotion = document.getElementById( 'panoramiciewing' );
+        trajectoryMotion.appendChild( renderer.domElement );
+        stats.dom.style.top = '67px';
+        stats.dom.style.left = '160px'
+        trajectoryMotion.appendChild( stats.dom );
+    })
+
+    let controls = new OrbitControls(camera,renderer.domElement);//创建控件对象
+    // 启用惯性
+    controls.enableDamping = true
+    // 相机向外移动极限
+    controls.maxDistance = 30;
+    controls.minDistance = 20;
+
+
+
+
+
+
+</script>
+
+
+<script setup lang="ts">
+
+
+
+
+
+
+
+
+</script>
+
+<style scoped>
+
+
+</style>
