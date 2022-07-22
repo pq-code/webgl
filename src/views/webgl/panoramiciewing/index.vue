@@ -63,22 +63,26 @@
      * 创建相机公用方法
      * */
     function makeCamera(fov = 40) {
-      const aspect = 2 // the canvas default
-      const zNear = 0.1
-      const zFar = 1000
-      return new THREE.PerspectiveCamera(fov, aspect, zNear, zFar)
+        const aspect = 2 // the canvas default
+        const zNear = 0.1
+        const zFar = 1000
+        return new THREE.PerspectiveCamera(fov, aspect, zNear, zFar)
+        // fov — 摄像机视锥体垂直视野角度
+        // aspect — 摄像机视锥体长宽比
+        // near — 摄像机视锥体近端面
+        // far — 摄像机视锥体远端面
     }
-    const camera = makeCamera()
+    const camera = makeCamera();
     // .multiplyScalar() 矩阵的每个元素乘以参数。
-    camera.position.set(8, 4, 10).multiplyScalar(3)
+    camera.position.set(8, 4, 10).multiplyScalar(3);
     // 朝向
-    camera.lookAt(0, 0, 0)
+    camera.lookAt(0, 0, 0);
 
 
     // 方向光
-    const light = new THREE.DirectionalLight(0xffffff, 1)
-    light.position.set(0, 20, 0)
-    scene.add(light)
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(0, 20, 0);
+    scene.add(light);
 
     // 方向光
     const light1 = new THREE.DirectionalLight(0xffffff, 1)
@@ -141,19 +145,19 @@
     const wheelMaterial = new THREE.MeshPhongMaterial({ color: 0x888888 })
     // 根据底盘 定位轮胎位置
     const wheelPositions = [
-      [-carWidth / 2 - wheelThickness / 2, -carHeight / 2, carLength / 3],
-      [carWidth / 2 + wheelThickness / 2, -carHeight / 2, carLength / 3],
-      [-carWidth / 2 - wheelThickness / 2, -carHeight / 2, 0],
-      [carWidth / 2 + wheelThickness / 2, -carHeight / 2, 0],
-      [-carWidth / 2 - wheelThickness / 2, -carHeight / 2, -carLength / 3],
-      [carWidth / 2 + wheelThickness / 2, -carHeight / 2, -carLength / 3]
+        [-carWidth / 2 - wheelThickness / 2, -carHeight / 2, carLength / 3],
+        [carWidth / 2 + wheelThickness / 2, -carHeight / 2, carLength / 3],
+        [-carWidth / 2 - wheelThickness / 2, -carHeight / 2, 0],
+        [carWidth / 2 + wheelThickness / 2, -carHeight / 2, 0],
+        [-carWidth / 2 - wheelThickness / 2, -carHeight / 2, -carLength / 3],
+        [carWidth / 2 + wheelThickness / 2, -carHeight / 2, -carLength / 3]
     ]
     const wheelMeshes = wheelPositions.map((position) => {
-      const mesh = new THREE.Mesh(wheelGeometry, wheelMaterial)
-      mesh.position.set(...position)
-      mesh.rotation.z = Math.PI * 0.5
-      bodyMesh.add(mesh)
-      return mesh
+        const mesh = new THREE.Mesh(wheelGeometry, wheelMaterial)
+        mesh.position.set(...position)
+        mesh.rotation.z = Math.PI * 0.5
+        bodyMesh.add(mesh)
+        return mesh
     })
 
     // 底盘局部相机
@@ -297,17 +301,6 @@
 
 </script>
 
-
-<script setup lang="ts">
-
-
-
-
-
-
-
-
-</script>
 
 <style scoped>
 

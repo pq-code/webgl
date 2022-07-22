@@ -39,6 +39,10 @@ export const navigation = [
                 title: 'panoramiciewing',
                 router: '/panoramiciewing',
             },
+            {
+                title: 'forzaHorizonScenes',
+                router: '/forzaHorizonScenes',
+            },
         ]
     },
     {

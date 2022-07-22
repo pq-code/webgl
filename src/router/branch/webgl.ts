@@ -33,5 +33,12 @@ const webgl = [
     // leaf: true,//只有一个节点
     meta: { hidden: false, title: "heartOfSteel" },
   },
+  {
+    path: "/forzaHorizonScenes",
+    component: () => import(/* webpackChunkName: "about" */ "../../views/webgl/forzaHorizonScenes/index.vue"),
+    name: "forzaHorizonScenes",
+    // leaf: true,//只有一个节点
+    meta: { hidden: false, title: "forzaHorizonScenes" },
+  },
 ]
 export default webgl;
