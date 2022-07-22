@@ -1,6 +1,6 @@
 <template>
 
-    <div id="panoramiciewing"  class="panoramiciewing"/>
+    <div id="threeHome" class="three-home"/>
 
 </template>
 
@@ -8,14 +8,12 @@
     import { onMounted } from "vue";
     import * as THREE from "three";
     import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-    import Stats from 'three/examples/jsm/libs/stats.module.js';
     import {RectAreaLightHelper} from "three/examples/jsm/helpers/RectAreaLightHelper";
     import {RectAreaLightUniformsLib} from "three/examples/jsm/lights/RectAreaLightUniformsLib";
 
 
     // 创建场景对象Scene
     let scene = new THREE.Scene();
-    let stats = new Stats(); // 性能查看插件
 
     // 窗口数据
     let width = window.innerWidth; //窗口宽度
@@ -36,13 +34,13 @@
 
     renderer.setSize(width, height);//设置渲染区域尺寸
     renderer.setPixelRatio( window.devicePixelRatio );// 设置设备相数比
-    // renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色
+    renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色
     renderer.setAnimationLoop( animation ); // 设置动画
 
 
     // 初始化透视相机
     const camera = new THREE.PerspectiveCamera(s, width / height, 0.1, 1000)
-    camera.position.set( 0, 10, - 80 ); //设置相机位置
+    camera.position.set( 40, 130, - 50 ); //设置相机位置
     camera.lookAt(scene.position); //设置相机方向(指向的场景对象)
 
 
@@ -60,15 +58,11 @@
         // const mesh = scene.getObjectByName( 'meshKnot' );
         // mesh.rotation.y = time / 1000;
         renderer.render( scene, camera );
-        stats.update();
     }
 
     onMounted(()=> {
-        let trajectoryMotion = document.getElementById( 'panoramiciewing' );
+        let trajectoryMotion = document.getElementById( 'threeHome' );
         trajectoryMotion.appendChild( renderer.domElement );
-        stats.dom.style.top = '67px';
-        stats.dom.style.left = '160px'
-        trajectoryMotion.appendChild( stats.dom );
     })
 
     let controls = new OrbitControls(camera,renderer.domElement);//创建控件对象
@@ -86,7 +80,6 @@
 
     RectAreaLightUniformsLib.init();
 
-
     // 地面
     const geoFloor = new THREE.BoxGeometry( 2000, 0.1, 2000 );
     const matStdFloor = new THREE.MeshPhysicalMaterial( { color: 0x808080, roughness: 0.2, metalness: 0 ,clearcoat: 6} );
@@ -102,9 +95,9 @@
 
 
 <style scoped>
-. panoramiciewing{
-    background-image: linear-gradient(rgba(3, 192, 60, .3) 1px, transparent 1px), linear-gradient(90deg, rgba(3, 192, 60, .3) 1px, transparent 1px);
-    background-size: 1em 1em;
+
+.three-home {
+
 }
 
 
