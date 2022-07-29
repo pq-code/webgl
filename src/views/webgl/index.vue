@@ -1,30 +1,13 @@
 <template>
-
-  <div id="webgl">
-    webgl
-  </div>
-
+    <div id="webgl">webgl</div>
 </template>
 
 <script>
 export default {
-  name: 'webgl'
-}
+    name: 'webgl',
+};
 </script>
 
+<script setup lang="ts"></script>
 
-<script setup lang="ts">
-
-
-
-
-
-
-
-
-</script>
-
-<style scoped>
-
-
-</style>
+<style scoped></style>

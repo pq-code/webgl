@@ -21,8 +21,7 @@ export default defineConfig(({ command }) => {
       disable: false,
       threshold: 10240,
       algorithm: 'gzip',
-      // deleteOriginFile: command !== 'serve', // 是否删除原始文件
-      deleteOriginFile: false
+      deleteOriginFile: command !== 'serve', // 是否删除原始文件
     })],
     // 打包配置
     build: {

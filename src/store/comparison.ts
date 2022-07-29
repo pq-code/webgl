@@ -64,4 +64,3 @@ export const comparisonStore = defineStore('comparison', {
 //3.修改 state
 
 //4. 容器中的 action 的使用
-

@@ -9,4 +9,3 @@ export const obtainImage = (filename: any,data: any) => {
 		prefixUrl
 	});
 };
-

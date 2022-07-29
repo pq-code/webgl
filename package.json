@@ -1,34 +1,40 @@
 {
-  "name": "vue3-webgl",
-  "private": true,
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@webgpu/types": "^0.1.17",
-    "axios": "^0.27.2",
-    "element-plus": "^2.2.1",
-    "lingo3d-vue": "^1.0.97",
-    "pinia": "^2.0.14",
-    "screenfull": "^6.0.1",
-    "t": "^0.5.1",
-    "three": "^0.142.0",
-    "vite-plugin-compression": "^0.5.1",
-    "vue": "^3.2.25",
-    "vue-router": "^4.0.15"
-  },
-  "devDependencies": {
-    "@types/node": "^17.0.38",
-    "@vitejs/plugin-vue": "^2.3.3",
-    "less": "^4.1.2",
-    "less-loader": "^11.0.0",
-    "style-resources-loader": "^1.5.0",
-    "typescript": "^4.5.4",
-    "vite": "^2.9.9",
-    "vue-cli-plugin-style-resources-loader": "^0.1.5",
-    "vue-tsc": "^0.34.7"
-  }
+    "name": "vue3-webgl",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc --noEmit && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@webgpu/types": "^0.1.17",
+        "axios": "^0.27.2",
+        "element-plus": "^2.2.1",
+        "lingo3d-vue": "^1.0.97",
+        "pinia": "^2.0.14",
+        "screenfull": "^6.0.1",
+        "t": "^0.5.1",
+        "three": "^0.142.0",
+        "vite-plugin-compression": "^0.5.1",
+        "vue": "^3.2.25",
+        "vue-router": "^4.0.15"
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.38",
+        "@typescript-eslint/eslint-plugin": "^5.31.0",
+        "@typescript-eslint/parser": "^5.31.0",
+        "@vitejs/plugin-vue": "^2.3.3",
+        "eslint": "^8.20.0",
+        "eslint-define-config": "^1.5.1",
+        "eslint-plugin-vue": "^9.3.0",
+        "less": "^4.1.2",
+        "less-loader": "^11.0.0",
+        "prettier": "^2.7.1",
+        "style-resources-loader": "^1.5.0",
+        "typescript": "^4.5.4",
+        "vite": "^2.9.9",
+        "vue-cli-plugin-style-resources-loader": "^0.1.5",
+        "vue-tsc": "^0.34.7"
+    }
 }

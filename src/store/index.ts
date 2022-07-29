@@ -42,9 +42,9 @@ export const useStore = defineStore('main', {
             // this.$pathc
 
             //建议使用
-            this.$patch(state => {
+            // this.$patch(state => {
 
-            })
+            // })
         }
     },
 })
@@ -55,4 +55,3 @@ export const useStore = defineStore('main', {
 //3.修改 state
 
 //4. 容器中的 action 的使用
-
