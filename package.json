@@ -8,7 +8,9 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@amap/amap-jsapi-loader": "^1.0.1",
         "@webgpu/types": "^0.1.17",
+        "amap": "^1.0.7",
         "axios": "^0.27.2",
         "element-plus": "^2.2.1",
         "lingo3d-vue": "^1.0.97",

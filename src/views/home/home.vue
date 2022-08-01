@@ -56,7 +56,7 @@ const goBack = () => {
 }
 .hemeLeft {
     width: var(--home-sidebar-white);
-    height: calc(100% - var(--home-heard-height));
+    height: calc(100vh - var(--home-heard-height));
     position: fixed;
     top: var(--home-heard-height);
     bottom: 0;
@@ -69,8 +69,8 @@ const goBack = () => {
     /* border-right: 1px solid #ffffff; */
 }
 .hemeMain {
-    width: calc(100% - var(--home-sidebar-white));
-    height: calc(100% - var(--home-heard-height));
+    width: calc(100vh - var(--home-sidebar-white));
+    height: calc(100vh - var(--home-heard-height));
     top: var(--home-heard-height);
     left: var(--home-sidebar-white);
     position: absolute;
