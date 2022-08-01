@@ -40,5 +40,12 @@ const webgl = [
     // leaf: true,//只有一个节点
     meta: { hidden: false, title: "forzaHorizonScenes" },
   },
+  {
+    path: "/visualLargeScreen",
+    component: () => import(/* webpackChunkName: "about" */ "../../views/webgl/visualLargeScreen/index.vue"),
+    name: "forzaHorizonScenes",
+    // leaf: true,//只有一个节点
+    meta: { hidden: false, title: "visualLargeScreen" },
+  },
 ]
 export default webgl;

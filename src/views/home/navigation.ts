@@ -43,6 +43,10 @@ export const navigation = [
                 title: 'forzaHorizonScenes',
                 router: '/forzaHorizonScenes',
             },
+            {
+                title: 'visualLargeScreen',
+                router: '/visualLargeScreen',
+            },
         ]
     },
     {
