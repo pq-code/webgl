@@ -1,10 +1,10 @@
 <template>
-    <div class="map-content" id="uuid"></div>
+    <div class="map-content" :id="uuid"></div>
 </template>
 
 <script setup>
 import AMapLoader from '@amap/amap-jsapi-loader';
-
+import { guid } from '@/utils/uuid';
 const props = defineProps({
     zoom: {
         type: Number,
@@ -37,6 +37,7 @@ const props = defineProps({
 });
 
 let map, AMap;
+let uuid = guid;
 
 const initMap = () => {
     AMapLoader.load({
@@ -45,7 +46,7 @@ const initMap = () => {
         plugin: props.plugins,
     }).then(amap => {
         AMap = amap;
-        map = new AMap.Map('#uuid', {
+        map = new AMap.Map(uuid, {
             resizeEnable: true, //是否监控地图容器尺寸变化
             zoom: props.zoom, // 级别
             mapStyle: props.mapStyle, // 设置颜色底层

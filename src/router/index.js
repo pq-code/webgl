@@ -35,6 +35,13 @@ const routes = [
         // leaf: true,//只有一个节点
         meta: { hidden: false, title: "visualLargeScreen" },
     },
+    {
+        path: "/dashboard",
+        component: () => import(/* webpackChunkName: "about" */ "../views/webgl/dashboard/index.vue"),
+        name: "dashboard",
+        // leaf: true,//只有一个节点
+        meta: { hidden: false, title: "dashboard" },
+    },
 ]
 
 const router = createRouter({
