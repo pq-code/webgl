@@ -47,7 +47,7 @@ renderer.setAnimationLoop(animation); // 设置动画
 
 // 初始化透视相机
 const camera = new THREE.PerspectiveCamera(s, width / height, 0.1, 1000);
-camera.position.set(0, 10, -100); //设置相机位置
+camera.position.set(0, 50, -100); //设置相机位置
 camera.lookAt(scene.position); //设置相机方向(指向的场景对象)
 
 let onWindowResize = function (w, h) {
@@ -83,6 +83,10 @@ controls.enableDamping = true;
 // 相机向外移动极限
 // controls.maxDistance = 30;
 // controls.minDistance = 20;
+
+//环境光:环境光颜色RGB成分分别和物体材质颜色RGB成分分别相乘
+var ambient = new THREE.AmbientLight(0x444444);
+scene.add(ambient); //环境光对象添加到scene场景中
 
 var geometry = new THREE.BoxGeometry(50, 50, 50);
 // 三角形面渲染模式
