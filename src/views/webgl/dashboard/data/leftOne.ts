@@ -11,12 +11,11 @@ const data = [
     { type: '50 岁以上', value: 1500, percent: 0.06 },
 ];
 
-export const leftDataOne = () => {
+export const leftDataOne = ( ) => {
     const chart = new Chart({
         container: 'leftDataOne',
         autoFit: true,
-        height: 250,
-        padding: [50, 20, 50, 20],
+        padding: [40, 20, 20, 20],
     });
     chart.data(data);
     chart.scale('value', {

@@ -8,11 +8,11 @@
         <Map class="map"></Map>
         <!-- 左 -->
         <div class="left">
-            <left></left>
+            <dataFeft ref="dataFeftRef"></dataFeft>
         </div>
         <!-- 右 -->
         <div class="right">
-            <right></right>
+            <dataRight ref="dataRightRef"></dataRight>
         </div>
         <!-- 中间上 -->
         <div class="top" v-if="isTop" id="top">
@@ -31,27 +31,34 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import left from './left.vue';
-import right from './right.vue';
+import dataFeft from './left.vue';
+import dataRight from './right.vue';
 import Map from './map/index.vue';
 import Three from './three/index.vue';
+import { topheight } from './assets/css';
 
 let threeWidth = ref(window.innerWidth * 0.5);
 let threeHeight = ref(window.innerHeight * 0.53);
 const isTop = ref(true);
 const visualLargeScreenThree = ref();
+const dataFeftRef = ref();
+const dataRightRef = ref();
 
 const onWindowResize = () => {
     threeWidth.value = window.innerWidth * 0.5;
     threeHeight.value = window.innerHeight * 0.53;
-    visualLargeScreenThree.value.onWindowResize(threeWidth.value, threeHeight.value);
+    if (visualLargeScreenThree.value)
+        visualLargeScreenThree.value.onWindowResize(threeWidth.value, threeHeight.value);
+    // dataFeftRef.value.onWindowResize();
+    // dataRightRef.value.value.onWindowResize();
 };
 
 window.addEventListener('resize', onWindowResize);
 </script>
 
 <style lang="less" scoped>
-@top-height: 7vh;
+@top-height: v-bind(topheight);
+// @top-height: 7vh;
 .dashboard-page {
     // width: 1920px;
     // height: 1080px;

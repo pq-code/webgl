@@ -15,43 +15,63 @@
 </template>
 <script setup lang="ts">
 import { onMounted } from 'vue';
-
-import { leftDataOne } from './data/leftOne.ts';
-import { leftDataTwo } from './data/leftTwo.ts';
+import { leftDataOne } from './data/leftOne';
+import { leftDataTwo } from './data/leftTwo';
+import { leftTitleSize, topheight } from './assets/css';
 
 onMounted(() => {
     leftDataOne();
     leftDataTwo();
 });
 
-// const chart = new G2.Chart({
-//     /* your options */
-// });
+defineExpose({});
 </script>
 <style lang="less" scoped>
-@left-title-size: 3vh;
+@left-title-size: v-bind(leftTitleSize);
+// @left-title-size: 3vh;
 .data-left-dataOne {
     background-color: aqua;
     height: 31vh;
+    display: flex;
+    flex-direction: column;
     .data-left-titleOne {
         font-size: @left-title-size;
         color: #fff;
+    }
+    .leftDataOne {
+        flex: auto;
+        height: 0;
+        // width: 100%;
     }
 }
 .data-left-dataTwo {
     background-color: aqua;
     height: 31vh;
+    display: flex;
+    flex-direction: column;
     .data-left-titleTwo {
         font-size: @left-title-size;
         color: #fff;
+    }
+    .leftDataTwo {
+        flex: auto;
+        height: 0;
+        // width: 100%;
     }
 }
 .data-left-dataThree {
     background-color: aqua;
     height: 31vh;
+    display: flex;
+    flex-direction: column;
     .data-left-titleThree {
         font-size: @left-title-size;
         color: #fff;
+    }
+    .leftDataThree {
+        flex: auto;
+        height: 0;
+        // width: 100%;
     }
 }
 </style>

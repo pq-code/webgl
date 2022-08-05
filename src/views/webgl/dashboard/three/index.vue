@@ -42,7 +42,7 @@ let renderer = new THREE.WebGLRenderer({
 
 renderer.setSize(width, height); //设置渲染区域尺寸
 renderer.setPixelRatio(window.devicePixelRatio); // 设置设备相数比
-renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色
+// renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色
 renderer.setAnimationLoop(animation); // 设置动画
 
 // 初始化透视相机
@@ -63,8 +63,8 @@ let onWindowResize = function (w, h) {
 // window.addEventListener('resize', onWindowResize);
 
 function animation(time) {
-    // const mesh = scene.getObjectByName('meshKnot');
-    mesh.rotation.y = time / 1000;
+    let mesh = scene.getObjectByName('Earth');
+    if (mesh) mesh.rotation.y = time / 1000;
     renderer.render(scene, camera);
     // stats.update();
 }
@@ -84,17 +84,60 @@ controls.enableDamping = true;
 // controls.maxDistance = 30;
 // controls.minDistance = 20;
 
-//环境光:环境光颜色RGB成分分别和物体材质颜色RGB成分分别相乘
-var ambient = new THREE.AmbientLight(0x444444);
-scene.add(ambient); //环境光对象添加到scene场景中
+// 环境光:环境光颜色RGB成分分别和物体材质颜色RGB成分分别相乘
+// var ambient = new THREE.AmbientLight(0x444444);
+// scene.add(ambient); //环境光对象添加到scene场景中
 
-var geometry = new THREE.BoxGeometry(50, 50, 50);
-// 三角形面渲染模式
-var material = new THREE.MeshLambertMaterial({
-    color: 0x0000ff, //三角面颜色
-}); //材质对象
-var mesh = new THREE.Mesh(geometry, material); //网格模型对象Mesh
-scene.add(mesh);
+let light = new THREE.HemisphereLight(0xffffff);
+light.position.set(0, 0, 200);
+scene.add(light);
+
+// TextureLoader创建一个纹理加载器对象，可以加载图片作为几何体纹理
+let textureLoader = new THREE.TextureLoader();
+// 执行load方法，加载纹理贴图成功后，返回一个纹理对象Texture
+textureLoader.load('map.jpg', texture => {
+    let geometry = new THREE.SphereGeometry(60, 100, 100);
+    let material = new THREE.MeshLambertMaterial({
+        // color: 0x0000ff,
+        // 设置颜色纹理贴图：Texture对象作为材质map属性的属性值
+        map: texture, //设置颜色贴图属性值
+        material: 0.5, //透明度 取值0-1；
+        transparent: true, //设置是否为透明
+        // emissive: 0xffffff,
+    }); //材质对象Material
+    let mesh = new THREE.Mesh(geometry, material); //网格模型对象Mesh
+    mesh.name = 'Earth';
+    let pivotPoint = new THREE.Object3D(); //3d效果
+    mesh.add(pivotPoint);
+    scene.add(mesh); //网格模型添加到场景中
+    //纹理贴图加载成功后，调用渲染函数执行渲染操作
+    // render();
+});
+
+// 经纬度转换为坐标点
+const longitudeLatitudeConversion = (longitude, latitude, radius = 60) => {
+    let lg = THREE.Math.degToRad(longitude);
+    let lt = THREE.Math.degToRad(latitude); // 获取x，y，z坐标
+    let temp = radius * Math.cos(lt);
+    let x = temp * Math.sin(lg);
+    let y = radius * Math.sin(lt);
+    let z = temp * Math.cos(lg);
+    return new THREE.Vector3(x, y, z);
+};
+
+let shapePoint = new THREE.Shape(),
+    r = 60;
+shapePoint.absarc(0, 0, r - 4, 0, 2 * Math.PI, false);
+let arcGeometry = new THREE.ShapeGeometry(shapePoint);
+let arcMaterial = new THREE.MeshBasicMaterial({ color: 0x008080 });
+let point = new THREE.Mesh(arcGeometry, arcMaterial);
+
+// let geometryLine = new THREE.Geometry();
+// let arc = new THREE.ArcCurve(0, 0, r, 0, 2 * Math.PI);
+// let points = arc.getPoints(40);
+// geometryLine.setFromPoints(points);
+// let LineMateri = new THREE.LineBasicMaterial({ color: 0x20b2aa });
+// let line = new THREE.Line(geometryLine, LineMateri);
 
 defineExpose({
     onWindowResize,

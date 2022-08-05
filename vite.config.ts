@@ -49,6 +49,7 @@ export default defineConfig(({ command }) => {
       // css预处理器
       preprocessorOptions: {
         less: {
+          javascriptEnabled: true,
           lessOptions: {
             modifyVars: {
               'primary-color': '#ec6800'
