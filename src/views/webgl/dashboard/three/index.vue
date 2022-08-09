@@ -45,6 +45,10 @@ renderer.setPixelRatio(window.devicePixelRatio); // 设置设备相数比
 // renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色
 renderer.setAnimationLoop(animation); // 设置动画
 
+// 创建时钟
+const clock = new THREE.Clock();
+
+
 // 初始化透视相机
 const camera = new THREE.PerspectiveCamera(s, width / height, 0.1, 1000);
 camera.position.set(0, 50, -100); //设置相机位置
@@ -64,7 +68,7 @@ let onWindowResize = function (w, h) {
 
 function animation(time) {
     let mesh = scene.getObjectByName('Earth');
-    if (mesh) mesh.rotation.y = time / 1000;
+    if (mesh) mesh.rotation.y = time / 2600;
     renderer.render(scene, camera);
     // stats.update();
 }
@@ -110,8 +114,6 @@ textureLoader.load('map.jpg', texture => {
     let pivotPoint = new THREE.Object3D(); //3d效果
     mesh.add(pivotPoint);
     scene.add(mesh); //网格模型添加到场景中
-    //纹理贴图加载成功后，调用渲染函数执行渲染操作
-    // render();
 });
 
 // 经纬度转换为坐标点
@@ -127,10 +129,11 @@ const longitudeLatitudeConversion = (longitude, latitude, radius = 60) => {
 
 let shapePoint = new THREE.Shape(),
     r = 60;
-shapePoint.absarc(0, 0, r - 4, 0, 2 * Math.PI, false);
+shapePoint.absarc(0, 0, r, 0, 2 * Math.PI, false);
 let arcGeometry = new THREE.ShapeGeometry(shapePoint);
 let arcMaterial = new THREE.MeshBasicMaterial({ color: 0x008080 });
 let point = new THREE.Mesh(arcGeometry, arcMaterial);
+scene.add(point);
 
 // let geometryLine = new THREE.Geometry();
 // let arc = new THREE.ArcCurve(0, 0, r, 0, 2 * Math.PI);
@@ -138,6 +141,7 @@ let point = new THREE.Mesh(arcGeometry, arcMaterial);
 // geometryLine.setFromPoints(points);
 // let LineMateri = new THREE.LineBasicMaterial({ color: 0x20b2aa });
 // let line = new THREE.Line(geometryLine, LineMateri);
+// scene.add(line);
 
 defineExpose({
     onWindowResize,

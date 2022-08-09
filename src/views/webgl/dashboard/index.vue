@@ -64,7 +64,7 @@ window.addEventListener('resize', onWindowResize);
     // height: 1080px;
     width: 100vw;
     height: 100vh;
-    background: blue;
+    // background: blue;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -72,7 +72,7 @@ window.addEventListener('resize', onWindowResize);
     .header {
         height: @top-height;
         width: 100vw;
-        background: pink;
+        background: rgb(70, 117, 255);
         opacity: 0.8;
         .header-title {
             height: @top-height;
@@ -94,7 +94,7 @@ window.addEventListener('resize', onWindowResize);
         top: @top-height;
         height: calc(100vh - @top-height);
         background: yellow;
-        opacity: 0.6;
+        opacity: 0.8;
     }
     .right {
         width: 25vw;
@@ -103,7 +103,7 @@ window.addEventListener('resize', onWindowResize);
         right: 0;
         height: calc(100vh - @top-height);
         background: yellow;
-        opacity: 0.6;
+        opacity: 0.8;
     }
     .top {
         width: 50vw;
@@ -122,8 +122,8 @@ window.addEventListener('resize', onWindowResize);
         left: 50%;
         height: 40vh;
         transform: translateX(-50%);
-        background: red;
-        opacity: 0.6;
+        background: rgb(8, 7, 65);
+        opacity: 0.7;
     }
 }
 </style>
