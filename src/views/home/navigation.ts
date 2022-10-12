@@ -59,4 +59,14 @@ export const navigation = [
             },
         ]
     },
+    {
+        title: 'game',
+        router: "/game",
+        options: [
+            {
+                title: 'sl',
+                router: '/sl',
+            },
+        ]
+    },
 ]

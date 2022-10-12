@@ -4,6 +4,7 @@ import webgpu from "./branch/webgpu";
 import webgl from "./branch/webgl";
 import pmaoUI from "./branch/pmaoui";
 import pmaoUIhome from "./branch/pmao-ui"
+import game from "./branch/game"
 // import three from "./branch/three";
 
 const routes = [
@@ -22,7 +23,8 @@ const routes = [
             ...lingo3D,
             ...webgpu,
             ...webgl,
-            ...pmaoUI
+            ...pmaoUI,
+            ...game
             // ...three,
         ],
         meta: { hidden: false, title: "首页" },

@@ -1,17 +1,15 @@
 <template>
-    <div class="homeContainer">
+    <div class="honeContainer">
         <div class="homeHeard">
             <el-button @click="screen">全屏</el-button>
         </div>
-        <div class="hemeLeft">
-            <homeSidebar />
-        </div>
-        <div id="main" class="hemeMain">
-            <!-- <el-page-header :icon="ArrowLeft" content="detail" style="margin:10px"/> -->
-            <router-view />
-            <!--      <el-main style="width:100%;height:100%">-->
-            <!--        <router-view/>-->
-            <!--      </el-main>-->
+        <div class="homeCenter">
+            <div class="hemeLeft">
+                <homeSidebar />
+            </div>
+            <div id="main" class="hemeMain">
+                <router-view />
+            </div>
         </div>
     </div>
 </template>
@@ -40,39 +38,40 @@ const goBack = () => {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .honeContainer {
-    width: 100vh;
+    width: 100vw;
     height: 100vh;
-}
-.homeHeard {
-    height: var(--home-heard-height);
-    width: 100%;
-    background-color: #f0f0f3;
-    z-index: 1002;
-    position: fixed;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-}
-.hemeLeft {
-    width: var(--home-sidebar-white);
-    height: calc(100vh - var(--home-heard-height));
-    position: fixed;
-    top: var(--home-heard-height);
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1001;
-    overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-    /* border-right: 1px solid #ffffff; */
-}
-.hemeMain {
-    width: calc(100vh - var(--home-sidebar-white));
-    height: calc(100vh - var(--home-heard-height));
-    top: var(--home-heard-height);
-    left: var(--home-sidebar-white);
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    .homeHeard {
+        flex: 1 0 60px;
+        width: 100%;
+        // height: 80px;
+        background-color: #ffffff;
+        z-index: 1001;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    }
+    .homeCenter {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        .hemeLeft {
+            flex: 0 0 160px;
+            width: 160px;
+            height: 100%;
+            z-index: 1000;
+            overflow: hidden;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            // border-right: 1px solid #ffffff;
+        }
+        .hemeMain {
+            width: 100%;
+            height: 100%;
+            flex: 1;
+        }
+    }
 }
 </style>
