@@ -38,7 +38,8 @@ export default defineConfig(({ command }) => {
       port: 7000,
       proxy: {
         '/api': {
-          target: 'https://pqartstation.cn:3005',
+        //   target: 'https://pqartstation.cn:3005',
+          target: 'http://localhost:3005',
           changeOrigin: true,
           // secure: false,
           rewrite: (path) => path.replace(/^\/api/, '/'),

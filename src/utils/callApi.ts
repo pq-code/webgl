@@ -14,17 +14,17 @@
 
 import axios from 'axios';
 
-export const callApi = ({ url = '/', prefixUrl = '/', ...option }) => {
+export const callApi = ( url='/', method='post', params:object) => {
 	if (!url) {
 		const error = new Error('请传入url');
 		return Promise.reject(error);
 	}
-	const fullUrl = `/${prefixUrl}/${url}`;
 
 	return axios({
-		url: fullUrl,
-		...option,
-		timeout: 15000,
+		url,
+        method,
+        data: params,
+		timeout: 20000,
 		withCredentials: true,
 		headers: {
 			'Content-Type': 'application/json'
