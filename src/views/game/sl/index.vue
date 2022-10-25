@@ -44,7 +44,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import { login, dologin } from '@/api/user';
+import { login, dologin } from '@/api/apis/user';
 import gameFile from './gameFile/index.vue';
 import { ElMessage } from 'element-plus';
 import { ref } from 'vue';
@@ -53,20 +53,22 @@ const ruleForm = ref({
     username: '',
     password: '',
 });
-// login({}).then((res: any) => {
-//     debugger;
-//     if (res.code == 0) {
-//         ElMessage({
-//             message: '登陆成功',
-//             type: 'success',
-//         });
-//     } else {
-//         ElMessage.error(res.message);
-//     }
-// });
+
+login({
+    user_name: 'pq',
+    user_password: '123',
+}).then((res: any) => {
+    if (res.code == 0) {
+        ElMessage({
+            message: '登陆成功',
+            type: 'success',
+        });
+    } else {
+        ElMessage.error(res.message);
+    }
+});
 
 const submitForm = () => {
-    debugger;
     dologin({
         user_name: ruleForm.value.username,
         user_password: ruleForm.value.password,
@@ -74,7 +76,7 @@ const submitForm = () => {
         debugger;
         if (res.code == 0) {
             ElMessage({
-                message: '登陆成功',
+                message: '注册成功',
                 type: 'success',
             });
         } else {

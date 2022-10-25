@@ -17,3 +17,4 @@ export const errTips = {
     9323: 'uid获取失败',
     9324: '登录用户不存在',
 }
+
