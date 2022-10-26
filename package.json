@@ -14,7 +14,7 @@
         "amap": "^1.0.7",
         "axios": "^0.27.2",
         "element-plus": "^2.2.1",
-        "lingo3d-vue": "^1.0.97",
+        "lingo3d-vue": "^1.33.5",
         "pinia": "^2.0.14",
         "screenfull": "^6.0.1",
         "t": "^0.5.1",

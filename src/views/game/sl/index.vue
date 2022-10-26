@@ -45,7 +45,7 @@
 </template>
 <script setup lang="ts">
 import { login, dologin } from '@/api/apis/user';
-import gameFile from './gameFile/index.vue';
+// import gameFile from './gameFile/index.vue';
 import { ElMessage } from 'element-plus';
 import { ref } from 'vue';
 
@@ -55,7 +55,7 @@ const ruleForm = ref({
 });
 
 login({
-    user_name: 'pq',
+    user_name: 'qqq1',
     user_password: '123',
 }).then((res: any) => {
     if (res.code == 0) {

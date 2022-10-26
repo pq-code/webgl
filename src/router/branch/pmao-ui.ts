@@ -1,17 +1,19 @@
 const pmaoUIhome = [
-  {
-    path: "/pmaoUI/home",
-    component: () => import(/* webpackChunkName: "about" */ "../../views/pmaoUI/pmao-ui/index.vue"),
-    name: "pmaoUI",
-    // leaf: true,//只有一个节点
-    children: [
-      {
-        path: "/home",
-        component: () => import(/* webpackChunkName: "about" */ "../../views/pmaoUI/pmao-ui/index.vue"),
-      },
-    ],
-    meta: { hidden: false, title: "UI" },
-  },
-]
+    {
+        path: '/pmaoUI/home',
+        component: () =>
+            import(/* webpackChunkName: "about" */ '../../views/pmaoUI/pmao-ui/index.vue'),
+        name: 'pmaoUI',
+        // leaf: true,//只有一个节点
+        children: [
+            {
+                path: '/home',
+                component: () =>
+                    import(/* webpackChunkName: "about" */ '../../views/pmaoUI/pmao-ui/index.vue'),
+            },
+        ],
+        meta: { hidden: false, title: 'UI' },
+    },
+];
 
 export default pmaoUIhome;

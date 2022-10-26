@@ -5,7 +5,7 @@
             <div class="header-title">DOM</div>
         </div>
         <!-- 地图 -->
-        <Map class="map"></Map>
+        <map class="map"></map>
         <!-- 左 -->
         <div class="left">
             <dataFeft ref="dataFeftRef"></dataFeft>
@@ -33,7 +33,7 @@
 import { ref } from 'vue';
 import dataFeft from './left.vue';
 import dataRight from './right.vue';
-import Map from './map/index.vue';
+import map from './map/index.vue';
 import Three from './three/index.vue';
 import { topheight } from './assets/css';
 

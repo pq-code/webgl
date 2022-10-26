@@ -248,15 +248,15 @@
 
 "@lincode/filetypes@*":
   version "1.0.1"
-  resolved "https://registry.npmjs.org/@lincode/filetypes/-/filetypes-1.0.1.tgz"
-  integrity sha512-ltOOAqFCz9zRmhhis624r9ME7XNP2gYOAECa4kD5LxwEqZBto1/JK0mimDcnb6pZf4gvUjO+9tTyykQJfIcy4Q==
+  resolved "http://registry.plat.ge.cn/@lincode/filetypes/download/@lincode/filetypes-1.0.1.tgz#e648e6dfb6905456543459956ba3161c5c086b8e"
+  integrity sha1-5kjm37aQVFZUNFmVa6MWHFwIa44=
   dependencies:
     "@lincode/utils" "*"
 
 "@lincode/math@*":
   version "1.0.8"
-  resolved "https://registry.npmjs.org/@lincode/math/-/math-1.0.8.tgz"
-  integrity sha512-lgjk6Wv3YdVTsLQD1wSj8w6xyGYR66Dvg/Nu1wQUYWicYKijuDZC4UMaYjY7jb1Zf2Iwi6RVdP4iFkrdPztsBw==
+  resolved "http://registry.plat.ge.cn/@lincode/math/download/@lincode/math-1.0.8.tgz#ed8ae14638b7e4d3834868ac4efc9bdb1e18bee6"
+  integrity sha1-7YrhRji35NODSGisTvyb2x4YvuY=
 
 "@lincode/promiselikes@*":
   version "1.0.20"
@@ -308,10 +308,10 @@
   resolved "https://registry.npmjs.org/@sxzz/popperjs-es/-/popperjs-es-2.11.7.tgz"
   integrity sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==
 
-"@tweakpane/core@1":
-  version "1.0.9"
-  resolved "https://registry.npmjs.org/@tweakpane/core/-/core-1.0.9.tgz"
-  integrity sha512-vvS0IGhJ9Wq37vgldgF9Ohh5BA0RKapffhzyTN84170nt/0SCreXB9zIMLlbL4ZxvCKAKJ0080wJHS5aVhf20Q==
+"@tweakpane/core@*", "@tweakpane/core@1.1.0":
+  version "1.1.0"
+  resolved "http://registry.plat.ge.cn/@tweakpane/core/download/@tweakpane/core-1.1.0.tgz#a8290a7fbc1e0b63ba6ba87f53f8f21ed0401b65"
+  integrity sha1-qCkKf7weC2O6a6h/U/jyHtBAG2U=
 
 "@types/d3-timer@^2.0.0":
   version "2.0.1"
@@ -340,10 +340,17 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.38.tgz"
   integrity sha512-5jY9RhV7c0Z4Jy09G+NIDTsCZ5G0L5n+Z+p+Y7t5VJHM30bgwzSjVtlcBxqAj+6L/swIlvtOSzr8rBk/aNyV2g==
 
-"@types/three@0.140.0":
-  version "0.140.0"
-  resolved "https://registry.npmjs.org/@types/three/-/three-0.140.0.tgz"
-  integrity sha512-YPJLSIY6uKUOp1k6BZYDq5GtEIdhfeK04UCbc9IPAVbdn/RNjkfrbnyd7smrsNkJhc0IFASLpd3AAYgwqgXKVQ==
+"@types/three@0.144.0":
+  version "0.144.0"
+  resolved "http://registry.plat.ge.cn/@types/three/download/@types/three-0.144.0.tgz#a154f40122dbc3668c5424a5373f3965c6564557"
+  integrity sha1-oVT0ASLbw2aMVCSlNz85ZcZWRVc=
+  dependencies:
+    "@types/webxr" "*"
+
+"@types/webxr@*":
+  version "0.4.0"
+  resolved "http://registry.plat.ge.cn/@types/webxr/download/@types/webxr-0.4.0.tgz#ad06c96a324293e0d5175d13dd5ded5931f90ba3"
+  integrity sha1-rQbJajJCk+DVF10T3V3tWTH5C6M=
 
 "@typescript-eslint/eslint-plugin@^5.31.0":
   version "5.31.0"
@@ -733,20 +740,20 @@ braces@^3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-browser-fs-access@0.29.5:
-  version "0.29.5"
-  resolved "https://registry.npmjs.org/browser-fs-access/-/browser-fs-access-0.29.5.tgz"
-  integrity sha512-raivG4nPY3iTxBNgt2syHFjHGwWwyTxpCGx7OTLdmprakG+yXre9f5PZgPHQQ6axTlRxllj+fcmhRiI4gXLq0A==
+browser-fs-access@0.31.0:
+  version "0.31.0"
+  resolved "http://registry.plat.ge.cn/browser-fs-access/download/browser-fs-access-0.31.0.tgz#b2ac17322b81f3c89eaddcfc871b5fdbac174734"
+  integrity sha1-sqwXMiuB88ierdz8hxtf26wXRzQ=
 
 callsites@^3.0.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/callsites/-/callsites-3.1.0.tgz"
   integrity sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
 
-cannon-es@0.19.0:
-  version "0.19.0"
-  resolved "https://registry.npmjs.org/cannon-es/-/cannon-es-0.19.0.tgz"
-  integrity sha512-fu9UXrjFmAQXq3JyBVPbtyc53suX+QHzikZEJykxroVNnIx1xHq0jZenK8qwhdwbBAtDL9n/47TyPELuSQwZuA==
+cannon-es@0.20.0:
+  version "0.20.0"
+  resolved "http://registry.plat.ge.cn/cannon-es/download/cannon-es-0.20.0.tgz#bf2f62a674701f37e3d861c90668a32d4d32f082"
+  integrity sha1-vy9ipnRwHzfj2GHJBmijLU0y8II=
 
 chalk@^4.0.0, chalk@^4.1.2:
   version "4.1.2"
@@ -1431,11 +1438,6 @@ hey-listen@^1.0.8:
   resolved "https://registry.npmjs.org/hey-listen/-/hey-listen-1.0.8.tgz"
   integrity sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==
 
-howler@2:
-  version "2.2.3"
-  resolved "https://registry.npmjs.org/howler/-/howler-2.2.3.tgz"
-  integrity sha512-QM0FFkw0LRX1PR8pNzJVAY25JhIWvbKMBFM4gqk+QdV+kPXOhleWGCB6AiAF/goGjIHK2e/nIElplvjQwhr0jg==
-
 iconv-lite@^0.4.4:
   version "0.4.24"
   resolved "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz"
@@ -1459,6 +1461,13 @@ image-size@~0.5.0:
   version "0.5.5"
   resolved "https://registry.npmjs.org/image-size/-/image-size-0.5.5.tgz"
   integrity sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==
+
+immutability-helper@^2.7.1:
+  version "2.9.1"
+  resolved "http://registry.plat.ge.cn/immutability-helper/download/immutability-helper-2.9.1.tgz#71c423ba387e67b6c6ceba0650572f2a2a6727df"
+  integrity sha1-ccQjujh+Z7bGzroGUFcvKipnJ98=
+  dependencies:
+    invariant "^2.2.0"
 
 import-fresh@^3.0.0, import-fresh@^3.2.1:
   version "3.3.0"
@@ -1485,6 +1494,13 @@ inherits@2:
   version "2.0.4"
   resolved "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
+
+invariant@^2.2.0:
+  version "2.2.4"
+  resolved "http://registry.plat.ge.cn/invariant/download/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
+  integrity sha1-YQ88ksk1nOHbYW5TgAjSP/NRWOY=
+  dependencies:
+    loose-envify "^1.0.0"
 
 is-core-module@^2.8.1:
   version "2.9.0"
@@ -1519,6 +1535,11 @@ isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz"
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
+
+"js-tokens@^3.0.0 || ^4.0.0":
+  version "4.0.0"
+  resolved "http://registry.plat.ge.cn/js-tokens/download/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
+  integrity sha1-GSA/tZmR35jjoocFDUZHzerzJJk=
 
 js-yaml@^4.1.0:
   version "4.1.0"
@@ -1588,20 +1609,26 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-lingo3d-vue@^1.0.97:
-  version "1.0.104"
-  resolved "https://registry.npmjs.org/lingo3d-vue/-/lingo3d-vue-1.0.104.tgz"
-  integrity sha512-X0XCZyTXJOyEf+GDJo0iIwaHmG7un6Kd4/tFaRjhuoLnmVSIBjQ8Da3v0UI6mY21UlkJhG8pPvN8y19p5WbVMA==
+lingo3d-vue@^1.33.5:
+  version "1.34.4"
+  resolved "http://registry.plat.ge.cn/lingo3d-vue/download/lingo3d-vue-1.34.4.tgz#9f824a3e72fd74f779ae343727c2adb6d80fc5d9"
+  integrity sha1-n4JKPnL9dPd5rjQ3J8KtttgPxdk=
   dependencies:
-    "@types/three" "0.140.0"
-    lingo3d "1.10.203"
-    nanoid "3"
-    popmotion "11"
+    "@lincode/promiselikes" "*"
+    "@lincode/reactivity" "*"
+    "@lincode/utils" "*"
+    "@tweakpane/core" "1.1.0"
+    "@types/three" "0.144.0"
+    lingo3d "1.34.4"
+    popmotion "*"
+    preact "*"
+    stats.js "*"
+    tweakpane "3.1.0"
 
-lingo3d@1.10.203:
-  version "1.10.203"
-  resolved "https://registry.npmjs.org/lingo3d/-/lingo3d-1.10.203.tgz"
-  integrity sha512-MUIGzTs1q50VM3gHfgh7RnsppYwueo83FQwNOcmD2bPao4+f9NULdHOOavUjKWeZiC4MopquUiF8wJ/CNIIDKA==
+lingo3d@1.34.4:
+  version "1.34.4"
+  resolved "http://registry.plat.ge.cn/lingo3d/download/lingo3d-1.34.4.tgz#b9ed45486882b0dedda3fe9401b76fb3d1d2bc49"
+  integrity sha1-ue1FSGiCsN7do/6UAbdvs9HSvEk=
   dependencies:
     "@lincode/events" "*"
     "@lincode/filetypes" "*"
@@ -1609,18 +1636,20 @@ lingo3d@1.10.203:
     "@lincode/promiselikes" "*"
     "@lincode/reactivity" "*"
     "@lincode/utils" "*"
-    "@tweakpane/core" "1"
-    "@types/three" "0.140.0"
-    browser-fs-access "0.29.5"
-    cannon-es "0.19.0"
-    howler "2"
-    postprocessing "6"
-    preact "10"
-    preact-custom-element "4"
-    prettier "2"
-    three "0.140.2"
-    tweakpane "3"
-    xstate "4"
+    "@tweakpane/core" "*"
+    "@types/three" "0.144.0"
+    browser-fs-access "0.31.0"
+    cannon-es "0.20.0"
+    nipplejs "0.9.1"
+    postprocessing "6.28.7"
+    preact "*"
+    preact-compat "*"
+    preact-custom-element "*"
+    prettier "2.7.1"
+    three "0.144.0"
+    three-mesh-bvh "0.5.16"
+    tweakpane "*"
+    xstate "*"
 
 loader-utils@^2.0.0:
   version "2.0.2"
@@ -1650,6 +1679,13 @@ lodash@4, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
+loose-envify@^1.0.0, loose-envify@^1.4.0:
+  version "1.4.0"
+  resolved "http://registry.plat.ge.cn/loose-envify/download/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
+  integrity sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=
+  dependencies:
+    js-tokens "^3.0.0 || ^4.0.0"
 
 lru-cache@^6.0.0:
   version "6.0.0"
@@ -1745,7 +1781,7 @@ ms@2.1.2, ms@^2.1.1:
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-nanoid@3, nanoid@^3.3.4:
+nanoid@^3.3.4:
   version "3.3.4"
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
@@ -1769,6 +1805,11 @@ needle@^2.5.2:
     iconv-lite "^0.4.4"
     sax "^1.2.4"
 
+nipplejs@0.9.1:
+  version "0.9.1"
+  resolved "http://registry.plat.ge.cn/nipplejs/download/nipplejs-0.9.1.tgz#a1e3cbae03ffa9a89ca01b100d3957f6bcbbfa99"
+  integrity sha1-oePLrgP/qaicoBsQDTlX9ry7+pk=
+
 normalize-wheel-es@^1.1.2:
   version "1.1.2"
   resolved "https://registry.npmjs.org/normalize-wheel-es/-/normalize-wheel-es-1.1.2.tgz"
@@ -1780,6 +1821,11 @@ nth-check@^2.0.1:
   integrity sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==
   dependencies:
     boolbase "^1.0.0"
+
+object-assign@^4.1.1:
+  version "4.1.1"
+  resolved "http://registry.plat.ge.cn/object-assign/download/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
+  integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
 once@^1.3.0:
   version "1.4.0"
@@ -1855,10 +1901,10 @@ pinia@^2.0.14:
     "@vue/devtools-api" "^6.1.4"
     vue-demi "*"
 
-popmotion@11:
+popmotion@*:
   version "11.0.3"
-  resolved "https://registry.npmjs.org/popmotion/-/popmotion-11.0.3.tgz"
-  integrity sha512-Y55FLdj3UxkR7Vl3s7Qr4e9m0onSnP8W7d/xQLsoJM40vs6UKHFdygs6SWryasTZYqugMjm3BepCF4CWXDiHgA==
+  resolved "http://registry.plat.ge.cn/popmotion/download/popmotion-11.0.3.tgz#565c5f6590bbcddab7a33a074bb2ba97e24b0cc9"
+  integrity sha1-VlxfZZC7zdq3ozoHS7K6l+JLDMk=
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
@@ -1882,30 +1928,73 @@ postcss@^8.1.10, postcss@^8.4.13:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-postprocessing@6:
-  version "6.28.4"
-  resolved "https://registry.npmjs.org/postprocessing/-/postprocessing-6.28.4.tgz"
-  integrity sha512-xVw7wT9H4s/f/AWS+u3FssIZ1iMY632zweCHqcNZ1ydFChCWeHcWOpEPx0dQz2DMIUlZclFW9WmwMJQxESI+cQ==
+postprocessing@6.28.7:
+  version "6.28.7"
+  resolved "http://registry.plat.ge.cn/postprocessing/download/postprocessing-6.28.7.tgz#ab1104585c3372e576ccf1910a4ea577be379266"
+  integrity sha1-qxEEWFwzcuV2zPGRCk6ld743kmY=
 
-preact-custom-element@4:
+preact-compat@*:
+  version "3.19.0"
+  resolved "http://registry.plat.ge.cn/preact-compat/download/preact-compat-3.19.0.tgz#a71457b6a3bf051690a4411603bc2085aa061c2f"
+  integrity sha1-pxRXtqO/BRaQpEEWA7wghaoGHC8=
+  dependencies:
+    immutability-helper "^2.7.1"
+    preact-context "^1.1.3"
+    preact-render-to-string "^3.8.2"
+    preact-transition-group "^1.1.1"
+    prop-types "^15.6.2"
+    standalone-react-addons-pure-render-mixin "^0.1.1"
+
+preact-context@^1.1.3:
+  version "1.1.4"
+  resolved "http://registry.plat.ge.cn/preact-context/download/preact-context-1.1.4.tgz#866ebd35bef5788f73fc453f06f01b03ddf8f4ff"
+  integrity sha1-hm69Nb71eI9z/EU/BvAbA9349P8=
+
+preact-custom-element@*:
   version "4.2.1"
-  resolved "https://registry.npmjs.org/preact-custom-element/-/preact-custom-element-4.2.1.tgz"
-  integrity sha512-/fiEEAyC+MXRlCBRmv/owoN5BLpO2nF/MF3YBHLtp4C2lNqlhV+a4he74A5DhfDoRmxDHm0sYVgQzWFEyzTDsw==
+  resolved "http://registry.plat.ge.cn/preact-custom-element/download/preact-custom-element-4.2.1.tgz#a18752ef60823ea61199d9cdc1866e51139b3f46"
+  integrity sha1-oYdS72CCPqYRmdnNwYZuURObP0Y=
 
-preact@10:
-  version "10.7.3"
-  resolved "https://registry.npmjs.org/preact/-/preact-10.7.3.tgz"
-  integrity sha512-giqJXP8VbtA1tyGa3f1n9wiN7PrHtONrDyE3T+ifjr/tTkg+2N4d/6sjC9WyJKv8wM7rOYDveqy5ZoFmYlwo4w==
+preact-render-to-string@^3.8.2:
+  version "3.8.2"
+  resolved "http://registry.plat.ge.cn/preact-render-to-string/download/preact-render-to-string-3.8.2.tgz#bd72964d705a57da3a9e72098acaa073dd3ceff9"
+  integrity sha1-vXKWTXBaV9o6nnIJisqgc9087/k=
+  dependencies:
+    pretty-format "^3.5.1"
+
+preact-transition-group@^1.1.1:
+  version "1.1.1"
+  resolved "http://registry.plat.ge.cn/preact-transition-group/download/preact-transition-group-1.1.1.tgz#f0a49327ea515ece34ea2be864c4a7d29e5d6e10"
+  integrity sha1-8KSTJ+pRXs406ivoZMSn0p5dbhA=
+
+preact@*:
+  version "10.11.2"
+  resolved "http://registry.plat.ge.cn/preact/download/preact-10.11.2.tgz#e43f2a2f2985dedb426bb4c765b7bb037734f8a8"
+  integrity sha1-5D8qLymF3ttCa7THZbe7A3c0+Kg=
 
 prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prettier@2, prettier@^2.7.1:
+prettier@2.7.1, prettier@^2.7.1:
   version "2.7.1"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-2.7.1.tgz"
-  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
+  resolved "http://registry.plat.ge.cn/prettier/download/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha1-4jWAaFDQV/l7sINopPfYmfd2DGQ=
+
+pretty-format@^3.5.1:
+  version "3.8.0"
+  resolved "http://registry.plat.ge.cn/pretty-format/download/pretty-format-3.8.0.tgz#bfbed56d5e9a776645f4b1ff7aa1a3ac4fa3c385"
+  integrity sha1-v77VbV6ad2ZF9LH/eqGjrE+jw4U=
+
+prop-types@^15.6.2:
+  version "15.8.1"
+  resolved "http://registry.plat.ge.cn/prop-types/download/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
+  integrity sha1-Z9h78aaU9IQ1zzMsJK8QIUoxQLU=
+  dependencies:
+    loose-envify "^1.4.0"
+    object-assign "^4.1.1"
+    react-is "^16.13.1"
 
 prr@~1.0.1:
   version "1.0.1"
@@ -1921,6 +2010,11 @@ queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
+
+react-is@^16.13.1:
+  version "16.13.1"
+  resolved "http://registry.plat.ge.cn/react-is/download/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
+  integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
 
 regenerator-runtime@^0.11.0:
   version "0.11.1"
@@ -2052,6 +2146,16 @@ sourcemap-codec@^1.4.8:
   resolved "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz"
   integrity sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
 
+standalone-react-addons-pure-render-mixin@^0.1.1:
+  version "0.1.1"
+  resolved "http://registry.plat.ge.cn/standalone-react-addons-pure-render-mixin/download/standalone-react-addons-pure-render-mixin-0.1.1.tgz#3c7409f4c79c40de9ac72c616cf679a994f37551"
+  integrity sha1-PHQJ9MecQN6axyxhbPZ5qZTzdVE=
+
+stats.js@*:
+  version "0.17.0"
+  resolved "http://registry.plat.ge.cn/stats.js/download/stats.js-0.17.0.tgz#b1c3dc46d94498b578b7fd3985b81ace7131cc7d"
+  integrity sha1-scPcRtlEmLV4t/05hbgaznExzH0=
+
 strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
@@ -2104,15 +2208,20 @@ text-table@^0.2.0:
   resolved "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
 
-three@0.140.2:
-  version "0.140.2"
-  resolved "https://registry.npmjs.org/three/-/three-0.140.2.tgz"
-  integrity sha512-DdT/AHm/TbZXEhQKQpGt5/iSgBrmXpjU26FNtj1KhllVPTKj1eG4X/ShyD5W2fngE+I1s1wa4ttC4C3oCJt7Ag==
+three-mesh-bvh@0.5.16:
+  version "0.5.16"
+  resolved "http://registry.plat.ge.cn/three-mesh-bvh/download/three-mesh-bvh-0.5.16.tgz#ed8518355fb70d7da6a5537558ba43f76a56b067"
+  integrity sha1-7YUYNV+3DX2mpVN1WLpD92pWsGc=
+
+three@0.144.0:
+  version "0.144.0"
+  resolved "http://registry.plat.ge.cn/three/download/three-0.144.0.tgz#2818517169f8ff94eea5f664f6ff1fcdcd436cc8"
+  integrity sha1-KBhRcWn4/5TupfZk9v8fzc1DbMg=
 
 three@^0.142.0:
   version "0.142.0"
-  resolved "https://registry.npmjs.org/three/-/three-0.142.0.tgz"
-  integrity sha512-ESjPO+3geFr+ZUfVMpMnF/eVU2uJPOh0e2ZpMFqjNca1wApS9lJb7E4MjwGIczgt9iuKd8PEm6Pfgp2bJ92Xtg==
+  resolved "http://registry.plat.ge.cn/three/download/three-0.142.0.tgz#89e226a16221f212eb1d40f0786604b711f28aed"
+  integrity sha1-ieImoWIh8hLrHUDweGYEtxHyiu0=
 
 through@~2.2.7:
   version "2.2.7"
@@ -2143,10 +2252,10 @@ tsutils@^3.21.0:
   dependencies:
     tslib "^1.8.1"
 
-tweakpane@3:
-  version "3.0.8"
-  resolved "https://registry.npmjs.org/tweakpane/-/tweakpane-3.0.8.tgz"
-  integrity sha512-vJuB0346B6gMpxnFDJyy2wcEshkvcTpQ74TCqJTeFaDvzq9FL29h5KszT1+YUTLlP+26OQI8PFGN8WbtOQStnQ==
+tweakpane@*, tweakpane@3.1.0:
+  version "3.1.0"
+  resolved "http://registry.plat.ge.cn/tweakpane/download/tweakpane-3.1.0.tgz#3ecaecf09c6234e27d0d8f101e16128b65fecc86"
+  integrity sha1-Psrs8JxiNOJ9DY8QHhYSi2X+zIY=
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
@@ -2283,10 +2392,10 @@ xml-name-validator@^4.0.0:
   resolved "https://registry.npmjs.org/xml-name-validator/-/xml-name-validator-4.0.0.tgz"
   integrity sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==
 
-xstate@4:
+xstate@*:
   version "4.32.1"
-  resolved "https://registry.npmjs.org/xstate/-/xstate-4.32.1.tgz"
-  integrity sha512-QYUd+3GkXZ8i6qdixnOn28bL3EvA++LONYL/EMWwKlFSh/hiLndJ8YTnz77FDs+JUXcwU7NZJg7qoezoRHc4GQ==
+  resolved "http://registry.plat.ge.cn/xstate/download/xstate-4.32.1.tgz#1a09c808a66072938861a3b4acc5b38460244b70"
+  integrity sha1-GgnICKZgcpOIYaO0rMWzhGAkS3A=
 
 yallist@^4.0.0:
   version "4.0.0"

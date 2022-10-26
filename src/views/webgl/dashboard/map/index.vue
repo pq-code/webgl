@@ -4,7 +4,7 @@
 
 <script setup>
 import AMapLoader from '@amap/amap-jsapi-loader';
-import { guid } from '@/utils
+import { guid } from '@/utils/index';
 const props = defineProps({
     zoom: {
         type: Number,

@@ -1,7 +1,7 @@
 export const navigation = [
     {
         title: 'lingo3D',
-        router: "/lingo3D",
+        router: '/lingo3D',
         options: [
             {
                 title: 'lingo3D',
@@ -10,22 +10,22 @@ export const navigation = [
             {
                 title: 'lingo3D',
                 router: '/lingo3D',
-            }
-        ]
+            },
+        ],
     },
     {
         title: 'webgpu',
-        router: "/webgpu",
+        router: '/webgpu',
         options: [
             {
                 title: 'webgpu',
                 router: '/webgpu',
             },
-        ]
+        ],
     },
     {
         title: 'webgl',
-        router: "/webgl",
+        router: '/webgl',
         options: [
             {
                 title: 'trajectoryMotion',
@@ -47,26 +47,26 @@ export const navigation = [
                 title: 'visualLargeScreen',
                 router: '/visualLargeScreen',
             },
-        ]
+        ],
     },
     {
         title: 'UI',
-        router: "/pmaoUI",
+        router: '/pmaoUI',
         options: [
             {
                 title: 'pmaoUI',
                 router: '/pmaoUI',
             },
-        ]
+        ],
     },
     {
         title: 'game',
-        router: "/game",
+        router: '/game',
         options: [
             {
                 title: 'sl',
                 router: '/sl',
             },
-        ]
+        ],
     },
-]
+];
