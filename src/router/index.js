@@ -15,9 +15,10 @@ const routes = [
         meta: { hidden: false, title: "首屏" },
     },
     {
-        path: "/home",
+        path: "/dashboard",
         component: () => import(/* webpackChunkName: "about" */ "../views/home/home.vue"),
-        name: "home",
+        name: "dashboard",
+        redirect: '/lingo3D',
         // leaf: true,//只有一个节点
         children: [
             ...lingo3D,
@@ -29,6 +30,7 @@ const routes = [
         ],
         meta: { hidden: false, title: "首页" },
     },
+
     ...pmaoUIhome,
     {
         path: "/visualLargeScreen2",
@@ -37,13 +39,13 @@ const routes = [
         // leaf: true,//只有一个节点
         meta: { hidden: false, title: "visualLargeScreen" },
     },
-    {
-        path: "/dashboard",
-        component: () => import(/* webpackChunkName: "about" */ "../views/webgl/dashboard/index.vue"),
-        name: "dashboard",
-        // leaf: true,//只有一个节点
-        meta: { hidden: false, title: "dashboard" },
-    },
+    // {
+    //     path: "/dashboard",
+    //     component: () => import(/* webpackChunkName: "about" */ "../views/webgl/dashboard/index.vue"),
+    //     name: "dashboard",
+    //     // leaf: true,//只有一个节点
+    //     meta: { hidden: false, title: "dashboard" },
+    // },
 ]
 
 const router = createRouter({

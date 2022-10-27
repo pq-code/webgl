@@ -13,7 +13,7 @@ const router = useRouter();
 
 const frontPage = function () {
     router.push({
-        path: '/home',
+        path: '/dashboard',
     });
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
-  <div>
-    webgpu
-  </div>
+    <router-view />
 </template>
-<style scoped>
-</style>
+
+<script setup lang="ts"></script>
+
+<style scoped></style>

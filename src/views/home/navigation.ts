@@ -5,11 +5,11 @@ export const navigation = [
         options: [
             {
                 title: 'lingo3D',
-                router: '/lingo3D',
+                router: '/lingo3D/home',
             },
             {
                 title: 'lingo3D',
-                router: '/lingo3D',
+                router: '/lingo3D/lingo3D2',
             },
         ],
     },
@@ -29,23 +29,23 @@ export const navigation = [
         options: [
             {
                 title: 'trajectoryMotion',
-                router: '/trajectoryMotion',
+                router: '/webgl/trajectoryMotion',
             },
             {
                 title: 'heartOfSteel',
-                router: '/heartOfSteel',
+                router: '/webgl/heartOfSteel',
             },
             {
                 title: 'panoramiciewing',
-                router: '/panoramiciewing',
+                router: '/webgl/panoramiciewing',
             },
             {
                 title: 'forzaHorizonScenes',
-                router: '/forzaHorizonScenes',
+                router: '/webgl/forzaHorizonScenes',
             },
             {
                 title: 'visualLargeScreen',
-                router: '/visualLargeScreen',
+                router: '/webgl/visualLargeScreen',
             },
         ],
     },
@@ -65,7 +65,11 @@ export const navigation = [
         options: [
             {
                 title: 'sl',
-                router: '/sl',
+                router: '/game/sl',
+            },
+            {
+                title: 'multiplayerOnline',
+                router: '/game/multiplayerOnline',
             },
         ],
     },

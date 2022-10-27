@@ -73,7 +73,6 @@ const submitForm = () => {
         user_name: ruleForm.value.username,
         user_password: ruleForm.value.password,
     }).then((res: any) => {
-        debugger;
         if (res.code == 0) {
             ElMessage({
                 message: '注册成功',
@@ -90,11 +89,11 @@ var ws = new WebSocket(`ws://localhost:3005`);
 ws.onopen = () => {
     //发送消息给服务器
     ws.send('客户端连接成功');
-    console.log('open');
+    console.log('客户端连接成功');
 };
 //监听服务器发来的消息
 ws.onmessage = res => {
-    console.log(res.data);
+    console.log('服务端：', res.data);
 };
 //关闭连接的回调
 ws.onclose = function () {

@@ -1,14 +1,19 @@
 const game = [
     {
         path: '/game',
-        component: () => import(/* webpackChunkName: "about" */ '../../views/game/sl/index.vue'),
+        component: () => import('@/views/game/index.vue'),
         name: 'game',
-        // leaf: true,//只有一个节点
+        redirect: '/game/sl',
         children: [
             {
-                path: '/sl',
-                component: () =>
-                    import(/* webpackChunkName: "about" */ '../../views/game/sl/index.vue'),
+                path: '/game/sl',
+                name: 'game.sl',
+                component: () => import('@/views/game/sl/index.vue'),
+            },
+            {
+                path: '/game/multiplayerOnline',
+                name: 'game.multiplayerOnline',
+                component: () => import('@/views/game/multiplayerOnline/index.vue'),
             },
         ],
         meta: { hidden: false, title: 'game' },

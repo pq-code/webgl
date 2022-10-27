@@ -1,59 +1,38 @@
 const webgl = [
     {
-        path: '/webgl',
+        path: '/dashboard/webgl',
         component: () => import(/* webpackChunkName: "about" */ '../../views/webgl/index.vue'),
-        name: 'webgl',
+        name: 'dashboard.webgl',
+        redirect: '/webgl/trajectoryMotion',
         // leaf: true,//只有一个节点
         children: [
             {
-                path: '/webgl',
-                component: () =>
-                    import(/* webpackChunkName: "about" */ '../../views/webgl/index.vue'),
+                path: '/webgl/panoramiciewing',
+                component: () => import('@/views/webgl/panoramiciewing/index.vue'),
+                name: 'webgl.panoramiciewing',
+            },
+            {
+                path: '/webgl/trajectoryMotion',
+                component: () => import('@/views/webgl/trajectoryMotion/index.vue'),
+                name: 'webgl.trajectoryMotion',
+            },
+            {
+                path: '/webgl/heartOfSteel',
+                component: () => import('@/views/webgl/heartOfSteel/index.vue'),
+                name: 'webgl.heartOfSteel',
+            },
+            {
+                path: '/webgl/forzaHorizonScenes',
+                component: () => import('@/views/webgl/forzaHorizonScenes/index.vue'),
+                name: 'webgl.forzaHorizonScenes',
+            },
+            {
+                path: '/webgl/visualLargeScreen',
+                component: () => import('@/views/webgl/visualLargeScreen/index.vue'),
+                name: 'webgl.forzaHorizonScenes',
             },
         ],
         meta: { hidden: false, title: 'webgl' },
-    },
-    {
-        path: '/panoramiciewing',
-        component: () =>
-            import(/* webpackChunkName: "about" */ '../../views/webgl/panoramiciewing/index.vue'),
-        name: 'panoramiciewing',
-        // leaf: true,//只有一个节点
-        meta: { hidden: false, title: 'panoramiciewing' },
-    },
-    {
-        path: '/trajectoryMotion',
-        component: () =>
-            import(/* webpackChunkName: "about" */ '../../views/webgl/trajectoryMotion/index.vue'),
-        name: 'trajectoryMotion',
-        // leaf: true,//只有一个节点
-        meta: { hidden: false, title: 'trajectoryMotion' },
-    },
-    {
-        path: '/heartOfSteel',
-        component: () =>
-            import(/* webpackChunkName: "about" */ '../../views/webgl/heartOfSteel/index.vue'),
-        name: 'heartOfSteel',
-        // leaf: true,//只有一个节点
-        meta: { hidden: false, title: 'heartOfSteel' },
-    },
-    {
-        path: '/forzaHorizonScenes',
-        component: () =>
-            import(
-                /* webpackChunkName: "about" */ '../../views/webgl/forzaHorizonScenes/index.vue'
-            ),
-        name: 'forzaHorizonScenes',
-        // leaf: true,//只有一个节点
-        meta: { hidden: false, title: 'forzaHorizonScenes' },
-    },
-    {
-        path: '/visualLargeScreen',
-        component: () =>
-            import(/* webpackChunkName: "about" */ '../../views/webgl/visualLargeScreen/index.vue'),
-        name: 'forzaHorizonScenes',
-        // leaf: true,//只有一个节点
-        meta: { hidden: false, title: 'visualLargeScreen' },
     },
 ];
 export default webgl;
