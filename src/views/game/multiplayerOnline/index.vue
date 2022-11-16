@@ -1,109 +1,191 @@
 <template>
-    <div class="onLine-center">
-        <div class="onLine-main">
-            <div class="onLine-game">
-                <div class="onLine-game-left">
-                    <div class="onLine-game-left-main">
-                        <div class="onLine-game-left-main-view">
-                            <p>{{ `${leftFrom.name} 连接成功 ${leftFrom.time}` }}</p>
-                            <ul class="onLine-game-left-main-view-ul">
-                                <li
-                                    v-for="item of leftData"
-                                    :key="item.time"
-                                    class="onLine-game-left-main-view-li"
-                                >
-                                    <p
-                                        :style="{
-                                            'text-align': item.user_name == 'pq' ? 'right' : 'left',
-                                        }"
-                                    >
-                                        {{ `${item.user_name}: ${item.text}` }}
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="onLine-game-left-main-input">
-                            <el-input
-                                :rows="10"
-                                v-model="leftFrom.textarea"
-                                type="textarea"
-                                @keyup.enter.native="leftSendOut()"
-                                :autosize="{ minRows: 3, maxRows: 4 }"
-                            />
-                            <el-button type="primary" @click="leftSendOut">发送</el-button>
-                        </div>
-                    </div>
+    <div class="onLine-main">
+        <div class="onLine-game-login">
+            <div class="onLine-game-login-main">
+                <el-form
+                    ref="ruleFormRef"
+                    :model="leftFrom"
+                    status-icon
+                    label-width="0"
+                    class="demo-ruleForm"
+                >
+                    <el-form-item label="" prop="username">
+                        <el-input
+                            v-model="leftFrom.username"
+                            placeholder="用户名"
+                            autocomplete="off"
+                        ></el-input>
+                    </el-form-item>
+
+                    <el-form-item label="" prop="password">
+                        <el-input
+                            v-model="leftFrom.password"
+                            type="password"
+                            placeholder="密码"
+                            autocomplete="off"
+                            show-password
+                            @keyup.enter.native="loging()"
+                        ></el-input>
+                    </el-form-item>
+
+                    <el-button type="primary" @click="loging()" style="width: 100%" round>
+                        登陆
+                    </el-button>
+                </el-form>
+                <div class="friendsList">
+                    <p class="friendsList-title">好友列表</p>
+                    <ul class="friendsList-ul">
+                        <li class="friendsList-li" v-for="item of leftFrom.friendsList">
+                            <p style="margin: 0">{{ item.name }}</p>
+                        </li>
+                    </ul>
                 </div>
-                <div class="onLine-game-right">
-                    <div class="onLine-game-right-main">
-                        <div class="onLine-game-right-main-view">
-                            <ul class="onLine-game-right-main-view-ul">
-                                <p>{{ `${rightFrom.name}连接成功${rightFrom.time}` }}</p>
-                                <li
-                                    v-for="item of rightData"
-                                    :key="item.time"
-                                    class="onLine-game-right-main-view-li"
-                                >
-                                    <p
-                                        :style="{
-                                            'text-align':
-                                                item.user_name == 'qqq1' ? 'right' : 'left',
-                                        }"
-                                    >
-                                        {{ `${item.user_name}: ${item.text}` }}
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="onLine-game-right-main-input">
-                            <el-input
-                                :rows="10"
-                                v-model="rightFrom.textarea"
-                                type="textarea"
-                                @keyup.enter.native="rightSendOut()"
-                                :autosize="{ minRows: 3, maxRows: 4 }"
-                            />
-                            <el-button type="primary" @click="rightSendOut">发送</el-button>
-                        </div>
-                    </div>
-                </div>
-                <div class="onLine-game-sidebar">
-                    <p class="onlineNumber">当前在线人数:{{ onlineNumber }}</p>
-                    <p
-                        class="lsftState"
-                        :style="{
-                            'background-color':
-                                lsftState == 1 ? 'rgb(6 255 8)' : 'rgb(255 116 116)',
-                        }"
-                    >
-                        pq连接状态:{{ lsftState == 1 ? '在线' : '离线' }}
-                    </p>
-                    <p
-                        class="rightState"
-                        :style="{
-                            'background-color':
-                                rightState == 1 ? 'rgb(6 255 8)' : 'rgb(255 116 116)',
-                        }"
-                    >
-                        qqq1连接状态:{{ rightState == 1 ? '在线' : '离线' }}
-                    </p>
-                </div>
+                <!--                <el-button-->
+                <!--                    type="primary"-->
+                <!--                    @click="getInfo()"-->
+                <!--                    style="width: 80%; margin-top: 40px"-->
+                <!--                    round-->
+                <!--                >-->
+                <!--                    获取登陆信息-->
+                <!--                </el-button>-->
+                <!--                <el-button-->
+                <!--                    type="primary"-->
+                <!--                    @click="addFriend()"-->
+                <!--                    style="width: 80%; margin-top: 40px"-->
+                <!--                    round-->
+                <!--                >-->
+                <!--                    添加好友-->
+                <!--                </el-button>-->
+                <!--                <el-button-->
+                <!--                    type="primary"-->
+                <!--                    @click="deleteFriend()"-->
+                <!--                    style="width: 80%; margin-top: 40px"-->
+                <!--                    round-->
+                <!--                >-->
+                <!--                    删除好友-->
+                <!--                </el-button>-->
+                <!--                <el-button-->
+                <!--                    type="primary"-->
+                <!--                    @click="getFriend()"-->
+                <!--                    style="width: 80%; margin-top: 40px"-->
+                <!--                    round-->
+                <!--                >-->
+                <!--                    获取好友列表-->
+                <!--                </el-button>-->
             </div>
         </div>
+        <div class="onLine-game-input">
+            <!--            <chat></chat>-->
+            <chat1></chat1>
+        </div>
+        <!--        <div class="onLine-game-sidebar">-->
+        <!--            <p class="onlineNumber">当前在线人数:{{ onlineNumber }}</p>-->
+        <!--            <p-->
+        <!--                class="lsftState"-->
+        <!--                :style="{-->
+        <!--                            'background-color':-->
+        <!--                                lsftState == 1 ? 'rgb(6 255 8)' : 'rgb(255 116 116)',-->
+        <!--                        }"-->
+        <!--            >-->
+        <!--                连接状态:{{ lsftState == 1 ? '在线' : '离线' }}-->
+        <!--            </p>-->
+        <!--            <p class="lsftState">当前在线用户</p>-->
+        <!--            <ul>-->
+        <!--                <li></li>-->
+        <!--            </ul>-->
+        <!--        </div>-->
     </div>
 </template>
 <script setup lang="ts">
 // import gameFile from './gameFile/index.vue';
-import { right } from '@popperjs/core';
 import { ElMessage } from 'element-plus';
-import { reactive, ref } from 'vue';
-import { login } from '@/api/apis/user';
+import { reactive, ref, watch } from 'vue';
+import {
+    login,
+    getUerInfo,
+    addFriends,
+    deleteFriends,
+    getFriends,
+    addChatRecord,
+} from '@/api/apis/user';
 import { Result } from '@/api/types/types';
+import chat1 from '@/components/ChatInterface/index1.vue';
+
+import { SocketUtils } from '@/utils/socket';
 
 const leftFrom = ref({
-    textarea: '',
-    time: '',
-    name: '',
+    username: '',
+    password: '',
+    friendsList: [
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+        {
+            name: 'aaaaa',
+            id: 'aaaaaaa',
+        },
+    ],
 });
 const rightFrom = ref({
     textarea: '',
@@ -118,278 +200,189 @@ const lsftState = ref(0);
 const rightState = ref(0);
 
 const onlineNumber = ref(0);
+const socketUtils = ref();
+const socket = ref();
 
 const leftSendOut = () => {
     const sendOut = {
         objective: 'sendOut',
-        user_name: 'pq',
+        user_name: '',
         text: leftFrom.value.textarea,
     };
     leftData.push(sendOut);
-    connect.send(JSON.stringify(sendOut));
     leftFrom.value.textarea = '';
 };
 
-const rightSendOut = () => {
-    const sendOut = {
-        objective: 'sendOut',
-        user_name: 'qqq1',
-        text: rightFrom.value.textarea,
-    };
-    rightData.push(sendOut);
-    connect.send(JSON.stringify(sendOut));
-    rightFrom.value.textarea = '';
+const loging = () => {
+    login({
+        user_name: leftFrom.value.username,
+        user_password: leftFrom.value.password,
+    }).then<Result>(res => {
+        ElMessage({
+            message: `${res.result.user_name}登陆成功`,
+            type: 'success',
+        });
+        establishSocket(res.result.user_id);
+    });
 };
 
-login({
-    user_name: 'qqq1',
-    user_password: '123',
-}).then<Result>(res => {
-    if (res.code == 0) {
-        ElMessage({
-            message: `${res.result.user_name}登陆成功`,
-            type: 'success',
-        });
-        const { user_name, user_id } = res.result;
-        const param = {
-            objective: 'login',
-            user_name,
-            user_id,
-        };
-        ws(JSON.stringify(param));
-    } else {
-        ElMessage.error(res.message);
-    }
-});
+// 建立socket连接
+const establishSocket = user_id => {
+    socketUtils.value = new SocketUtils(user_id);
+    socket.value = socketUtils.value.linkStart();
+    // 接收全域信息
+    socket.value = socketUtils.value.socket.on('broadcast', (e: Array<object>) => {
+        onlineNumber.value = e.NumberOnline;
+    });
+    // 接收信息
+    socket.value = socketUtils.value.socket.on('fresh-message', (e: object) => {
+        console.log(e.id, e.chatList);
+    });
+};
+// 发送消息
+const SendOut = () => {
+    const chatMessage = {
+        user: leftFrom.value.username,
+        value: rightFrom.value.textarea,
+        id: '9c60fbac-d471-4f29-badb-52d741a53ce8',
+    };
+    socketUtils.value.sendMessage(chatMessage);
+    addChatRecord({
+        user_name: leftFrom.value.username,
+        user_id: leftFrom.value.username,
+        user_friends_name: leftFrom.value.username,
+        user_friends_id: chatMessage.id,
+        chat_record: rightFrom.value.textarea,
+    }).then<Result>(res => {
+        console.log(res.result.message);
+    });
+};
 
-login({
+const getInfo = () => {
+    getUerInfo({
+        user_name: leftFrom.value.username,
+    }).then<Result>(res => {
+        console.log(res);
+    });
+};
+
+const friend = ref({
     user_name: 'pq',
-    user_password: '123',
-}).then((res: any) => {
-    if (res.code == 0) {
-        ElMessage({
-            message: `${res.result.user_name}登陆成功`,
-            type: 'success',
-        });
-        const { user_name, user_id } = res.result;
-        const param = {
-            objective: 'login',
-            user_name,
-            user_id,
-        };
-        ws(JSON.stringify(param));
-    } else {
-        ElMessage.error(res.message);
-    }
+    user_id: 'ef428e48-2947-4458-9144-514d16c6e7c7',
+    user_friends_name: 'ppp',
+    user_friends_id: '9c60fbac-d471-4f29-badb-52d741a53ce8',
 });
 
-let connect: any;
-// 建立连接
-const ws = (param: string) => {
-    connect = new WebSocket(`ws://localhost:3005`);
-    //连接成功后的回调函数
-    connect.onopen = () => {
-        //发送消息给服务器
-        connect.send(param);
-        console.log('客户端连接成功');
-    };
-    //监听服务器发来的消息
-    connect.onmessage = (res: object) => {
-        try {
-            if (typeof JSON.parse(res.data) == 'object') {
-                const user = JSON.parse(res.data);
-                if (user.objective == 'login') {
-                    const { user_name, connection_time } = user.result;
-                    if (user.code == 0) {
-                        onlineNumber.value += 1;
-                        if (user_name == 'pq') {
-                            lsftState.value = 1;
-                            leftFrom.value.name = user_name;
-                            leftFrom.value.time = connection_time;
-                        }
-                        if (user_name == 'qqq1') {
-                            rightState.value = 1;
-                            rightFrom.value.name = user_name;
-                            rightFrom.value.time = connection_time;
-                        }
-                    }
-                }
-                if (user.objective == 'sendOut') {
-                    const { user_name, text, time } = user;
-                    if (user.user_name == 'pq') {
-                        rightData.push({
-                            user_name,
-                            text,
-                            time,
-                        });
-                    }
-                    if (user.user_name == 'qqq1') {
-                        leftData.push({
-                            user_name,
-                            text,
-                            time,
-                        });
-                    }
-                }
-            }
-        } catch (e) {
-            console.log(e);
-        }
-        console.log(`服务端：${res.data}`);
-    };
-    //关闭连接的回调
-    connect.onclose = function () {
-        console.log('客户端断开连接');
-    };
+const addFriend = () => {
+    addFriends({
+        user_name: friend.value.user_name,
+        user_id: friend.value.user_id,
+        user_friends_name: friend.value.user_friends_name,
+        user_friends_id: friend.value.user_friends_id,
+    }).then<Result>(res => {
+        console.log(res);
+    });
+};
+
+const deleteFriend = () => {
+    deleteFriends({
+        user_name: friend.value.user_name,
+        user_id: friend.value.user_id,
+        user_friends_name: friend.value.user_friends_name,
+        user_friends_id: friend.value.user_friends_id,
+    }).then<Result>(res => {
+        console.log(res);
+    });
+};
+
+const getFriend = () => {
+    getFriends({
+        user_name: friend.value.user_name,
+        user_id: friend.value.user_id,
+    }).then<Result>(res => {
+        console.log(res);
+    });
 };
 </script>
 <style scoped lang="less">
-.onLine-center {
-    height: calc(100% - 20px);
-    width: calc(100% - 20px);
-    padding: 10px;
-
-    .onLine-main {
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        background-color: rgb(222, 233, 234);
-
-        // text-align: center;
-        // position: relative;
-        .onLine-game {
+.onLine-main {
+    width: 80%;
+    height: 80%;
+    min-height: 600px;
+    border-radius: 20px;
+    background-color: rgb(222, 233, 234);
+    display: flex;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    .onLine-game-login {
+        padding: 10px;
+        //flex: 1;
+        .onLine-game-login-main {
             display: flex;
-            width: calc(100% - 300px);
-            height: calc(100% - 300px);
-            // padding: 80px;
-            background-color: aquamarine;
-
-            .onLine-game-left {
-                width: 40%;
-
-                .onLine-game-left-main {
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-
-                    .onLine-game-left-main-view {
-                        // width: 100%;
-                        height: 70%;
-                        margin: 10px;
-                        background-color: aqua;
-                        overflow-y: auto;
-
-                        .onLine-game-left-main-view-ul {
-                            list-style-type: none;
-                            height: 100%;
-                            padding: 0;
-                            margin: 0;
-                            overflow: auto;
-                            background-color: aqua;
-
-                            .onLine-game-left-main-view-li {
-                                height: 20px;
-                                margin: 10px;
-                                text-align: left;
-                                background-color: #ffff;
-
-                                .p {
-                                    font-size: 20px;
-                                    border-radius: 4px;
-                                }
-                            }
-                        }
-                    }
-
-                    .onLine-game-left-main-input {
-                        // width: 100%;
-                        height: 30%;
-                        margin: 10px;
-                        overflow-y: auto;
-                        background-color: aqua;
-                        text-align: right;
+            width: 160px;
+            margin-top: 20px;
+            flex-direction: column;
+            .friendsList {
+                height: 300px;
+                margin-top: 10px;
+                .friendsList-title {
+                    margin: 0;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+                .friendsList-ul {
+                    height: 300px;
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    overflow-y: auto;
+                    .friendsList-li {
+                        padding: 0;
+                        margin: 2px 0;
+                        height: 20px;
+                        border-radius: 4px;
+                        background-color: #8f8f8f;
                     }
                 }
             }
+        }
+    }
 
-            .onLine-game-right {
-                width: 40%;
+    .onLine-game-input {
+        padding: 0 0 0 10px;
+        height: 100%;
+        width: 100%;
+        .onLine-game-input-main {
+            height: 100%;
+        }
+    }
 
-                .onLine-game-right-main {
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
+    .onLine-game-sidebar {
+        width: 200px;
+        .onlineNumber {
+            font-size: 14px;
+            font-weight: 800;
+            margin: 10px;
+            border-radius: 4px;
+            background-color: aqua;
+        }
 
-                    .onLine-game-right-main-view {
-                        // width: 100%;
-                        height: 70%;
-                        margin: 10px;
-                        overflow-y: auto;
+        .lsftState {
+            font-size: 14px;
+            font-weight: 800;
+            // width: 100%;
+            margin: 10px;
+            border-radius: 4px;
+        }
 
-                        .onLine-game-right-main-view-ul {
-                            list-style-type: none;
-                            height: 100%;
-                            padding: 0;
-                            margin: 0;
-                            overflow: auto;
-                            background-color: aqua;
-
-                            .onLine-game-right-main-view-li {
-                                height: 20px;
-                                margin: 10px;
-
-                                text-align: left;
-                                background-color: #ffff;
-
-                                .p {
-                                    font-size: 20px;
-                                    border-radius: 4px;
-                                }
-                            }
-                        }
-                    }
-
-                    .onLine-game-right-main-input {
-                        // width: 100%;
-                        height: 30%;
-                        margin: 10px;
-                        overflow-y: auto;
-                        background-color: aqua;
-                        text-align: right;
-                    }
-                }
-            }
-
-            .onLine-game-sidebar {
-                width: 20%;
-
-                .onlineNumber {
-                    font-size: 14px;
-                    font-weight: 800;
-                    // width: 100%;
-                    margin: 10px;
-                    border-radius: 4px;
-                    background-color: aqua;
-                }
-
-                .lsftState {
-                    font-size: 14px;
-                    font-weight: 800;
-                    // width: 100%;
-                    margin: 10px;
-                    border-radius: 4px;
-                }
-
-                .rightState {
-                    font-size: 14px;
-                    font-weight: 800;
-                    // width: 100%;
-                    margin: 10px;
-                    border-radius: 4px;
-                }
-            }
+        .rightState {
+            font-size: 14px;
+            font-weight: 800;
+            // width: 100%;
+            margin: 10px;
+            border-radius: 4px;
         }
     }
 }

@@ -1,7 +1,17 @@
 <template>
     <div class="honeContainer">
         <div class="homeHeard">
-            <el-button @click="screen">全屏</el-button>
+            <div class="homeHeard-left">
+
+            </div>
+            <div class="homeHeard-right">
+                <div class="homeHeard-icon">
+                    <i class="iconfont icon-quanping" @click="screen"/>
+                </div>
+                <div class="user-info">
+
+                </div>
+            </div>
         </div>
         <div class="homeCenter">
             <div class="hemeLeft">
@@ -45,12 +55,37 @@ const goBack = () => {
     display: flex;
     flex-direction: column;
     .homeHeard {
-        flex: 1 0 60px;
+        display: flex;
+        flex: 1 0 50px;
         width: 100%;
-        // height: 80px;
         background-color: #ffffff;
         z-index: 1001;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        .homeHeard-left {
+            width: 100%;
+        }
+        .homeHeard-right{
+            display: flex;
+            float: right;
+            line-height: 50px;
+            .user-info {
+                margin: 7px 10px 0 10px;
+                height: 36px;
+                width: 36px;
+                border-radius: 50%;
+                background-color: #0077aa;
+                cursor:pointer;
+            }
+            .homeHeard-icon {
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+                text-align:center;
+                .iconfont {
+                    font-size: 26px;
+                }
+            }
+        }
     }
     .homeCenter {
         width: 100%;
@@ -58,7 +93,7 @@ const goBack = () => {
         display: flex;
         flex-direction: row;
         .hemeLeft {
-            flex: 0 0 160px;
+            flex: 0 0 220px;
             width: 160px;
             height: 100%;
             z-index: 1000;
@@ -68,8 +103,8 @@ const goBack = () => {
             // border-right: 1px solid #ffffff;
         }
         .hemeMain {
-            width: 100%;
-            height: 100%;
+            //width: 100%;
+            //height: 100%;
             flex: 1;
         }
     }

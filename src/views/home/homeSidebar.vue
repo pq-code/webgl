@@ -6,7 +6,7 @@
             v-for="(item, index) of pdata.dataList"
         >
             <template #title>
-                <i class="iconfont icon-yingyong margin4"></i>
+<!--                <i class="iconfont icon-yingyong margin4"></i>-->
                 {{ item.title }}
             </template>
             <el-menu-item :key="e.router" :index="e.router" v-for="e of item.options">

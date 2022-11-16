@@ -70,8 +70,8 @@
     onMounted(()=> {
         let trajectoryMotion = document.getElementById( 'objectRendering' );
         trajectoryMotion.appendChild( renderer.domElement );
-        stats.dom.style.top = '67px';
-        stats.dom.style.left = '160px'
+        stats.dom.style.top = '50px';
+        stats.dom.style.left = '220px'
         trajectoryMotion.appendChild( stats.dom );
     })
 

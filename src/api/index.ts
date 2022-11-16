@@ -3,9 +3,11 @@ import { ElMessage } from 'element-plus';
 import { errTips } from './error/errTips';
 import type { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-const token = localStorage.getItem('token')
-    ? localStorage.getItem('token')
-    : sessionStorage.getItem('token');
+// const token = localStorage.getItem('token')
+//     ? localStorage.getItem('token')
+//     : sessionStorage.getItem('token');
+
+let token;
 
 const service: AxiosInstance = axios.create({
     baseURL: '/',
@@ -15,6 +17,7 @@ const service: AxiosInstance = axios.create({
 /* 请求拦截器 */
 service.interceptors.request.use(
     (config: AxiosRequestConfig) => {
+        token = sessionStorage.getItem('token');
         if (token && config && config?.headers) {
             config.headers.Authorization = token;
         }
