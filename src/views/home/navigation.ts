@@ -71,6 +71,24 @@ export const navigation = [
                 title: 'multiplayerOnline',
                 router: '/game/multiplayerOnline',
             },
+            {
+                title: 'drawingBoard',
+                router: '/game/drawingBoard',
+            },
+        ],
+    },
+    {
+        title: 'map',
+        router: '/map',
+        options: [
+            {
+                title: 'gaodeMap',
+                router: '/map/gaodeMap',
+            },
+            {
+                title: 'visualLargeScreen',
+                router: '/map/visualLargeScreen',
+            },
         ],
     },
 ];

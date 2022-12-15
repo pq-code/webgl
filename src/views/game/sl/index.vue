@@ -4,37 +4,31 @@
             <div class="sl-game">
                 <div class="sl-game-background">
                     <!-- <gameFile></gameFile> -->
-                    <el-form
-                        ref="ruleFormRef"
-                        :model="ruleForm"
-                        status-icon
-                        label-width="80px"
-                        class="demo-ruleForm"
-                    >
-                        <el-form-item label="用户名" prop="username">
-                            <el-input
-                                v-model="ruleForm.username"
-                                placeholder="请输入用户名"
-                                autocomplete="off"
-                            ></el-input>
+                    <el-form ref="ruleFormRef"
+                             :model="ruleForm"
+                             status-icon
+                             label-width="80px"
+                             class="demo-ruleForm">
+                        <el-form-item label="用户名"
+                                      prop="username">
+                            <el-input v-model="ruleForm.username"
+                                      placeholder="请输入用户名"
+                                      autocomplete="off"></el-input>
                         </el-form-item>
 
-                        <el-form-item label="密码" prop="password">
-                            <el-input
-                                v-model="ruleForm.password"
-                                type="password"
-                                placeholder="请输入密码"
-                                autocomplete="off"
-                                show-password
-                            ></el-input>
+                        <el-form-item label="密码"
+                                      prop="password">
+                            <el-input v-model="ruleForm.password"
+                                      type="password"
+                                      placeholder="请输入密码"
+                                      autocomplete="off"
+                                      show-password></el-input>
                         </el-form-item>
 
-                        <el-button
-                            type="primary"
-                            @click="submitForm()"
-                            style="width: 80%; margin-top: 40px"
-                            round
-                        >
+                        <el-button type="primary"
+                                   @click="submitForm()"
+                                   style="width: 80%; margin-top: 40px"
+                                   round>
                             注册
                         </el-button>
                     </el-form>
@@ -54,19 +48,19 @@ const ruleForm = ref({
     password: '',
 });
 
-login({
-    user_name: 'qqq1',
-    user_password: '123',
-}).then((res: any) => {
-    if (res.code == 0) {
-        ElMessage({
-            message: '登陆成功',
-            type: 'success',
-        });
-    } else {
-        ElMessage.error(res.message);
-    }
-});
+// login({
+//     user_name: 'qqq1',
+//     user_password: '123',
+// }).then((res: any) => {
+//     if (res.code == 0) {
+//         ElMessage({
+//             message: '登陆成功',
+//             type: 'success',
+//         });
+//     } else {
+//         ElMessage.error(res.message);
+//     }
+// });
 
 const submitForm = () => {
     dologin({
@@ -105,12 +99,14 @@ ws.onclose = function () {
     height: calc(100% - 20px);
     width: calc(100% - 20px);
     padding: 10px;
+
     .sl-main {
         width: 100%;
         height: 100%;
         border-radius: 10px;
         background-color: rgb(222, 233, 234);
         text-align: center;
+
         // position: relative;
         .sl-game {
             display: inline-block;
@@ -120,6 +116,7 @@ ws.onclose = function () {
             margin: 100px auto;
             background-color: aquamarine;
             overflow: hidden;
+
             .sl-game-background {
                 width: 360px;
                 height: 500px;

@@ -2,40 +2,40 @@
     <div class="onLine-main">
         <div class="onLine-game-login">
             <div class="onLine-game-login-main">
-                <el-form
-                    ref="ruleFormRef"
-                    :model="leftFrom"
-                    status-icon
-                    label-width="0"
-                    class="demo-ruleForm"
-                >
-                    <el-form-item label="" prop="username">
-                        <el-input
-                            v-model="leftFrom.username"
-                            placeholder="用户名"
-                            autocomplete="off"
-                        ></el-input>
+                <el-form ref="ruleFormRef"
+                         :model="leftFrom"
+                         status-icon
+                         label-width="0"
+                         class="demo-ruleForm">
+                    <el-form-item label=""
+                                  prop="username">
+                        <el-input v-model="leftFrom.username"
+                                  placeholder="用户名"
+                                  autocomplete="off"></el-input>
                     </el-form-item>
 
-                    <el-form-item label="" prop="password">
-                        <el-input
-                            v-model="leftFrom.password"
-                            type="password"
-                            placeholder="密码"
-                            autocomplete="off"
-                            show-password
-                            @keyup.enter.native="loging()"
-                        ></el-input>
+                    <el-form-item label=""
+                                  prop="password">
+                        <el-input v-model="leftFrom.password"
+                                  type="password"
+                                  placeholder="密码"
+                                  autocomplete="off"
+                                  show-password
+                                  @keyup.enter.native="loging()"></el-input>
                     </el-form-item>
 
-                    <el-button type="primary" @click="loging()" style="width: 100%" round>
+                    <el-button type="primary"
+                               @click="loging()"
+                               style="width: 100%"
+                               round>
                         登陆
                     </el-button>
                 </el-form>
                 <div class="friendsList">
                     <p class="friendsList-title">好友列表</p>
                     <ul class="friendsList-ul">
-                        <li class="friendsList-li" v-for="item of leftFrom.friendsList">
+                        <li class="friendsList-li"
+                            v-for="item of leftFrom.friendsList">
                             <p style="margin: 0">{{ item.name }}</p>
                         </li>
                     </ul>
@@ -203,21 +203,21 @@ const onlineNumber = ref(0);
 const socketUtils = ref();
 const socket = ref();
 
-const leftSendOut = () => {
-    const sendOut = {
-        objective: 'sendOut',
-        user_name: '',
-        text: leftFrom.value.textarea,
-    };
-    leftData.push(sendOut);
-    leftFrom.value.textarea = '';
-};
+// const leftSendOut = () => {
+//     const sendOut = {
+//         objective: 'sendOut',
+//         user_name: '',
+//         text: leftFrom.value?.textarea,
+//     };
+//     leftData.push(sendOut);
+//     leftFrom.value.textarea = '';
+// };
 
 const loging = () => {
     login({
         user_name: leftFrom.value.username,
         user_password: leftFrom.value.password,
-    }).then<Result>(res => {
+    }).then((res: any) => {
         ElMessage({
             message: `${res.result.user_name}登陆成功`,
             type: 'success',
@@ -227,7 +227,7 @@ const loging = () => {
 };
 
 // 建立socket连接
-const establishSocket = user_id => {
+const establishSocket = (user_id: any) => {
     socketUtils.value = new SocketUtils(user_id);
     socket.value = socketUtils.value.linkStart();
     // 接收全域信息
@@ -253,7 +253,7 @@ const SendOut = () => {
         user_friends_name: leftFrom.value.username,
         user_friends_id: chatMessage.id,
         chat_record: rightFrom.value.textarea,
-    }).then<Result>(res => {
+    }).then(res => {
         console.log(res.result.message);
     });
 };
@@ -261,7 +261,7 @@ const SendOut = () => {
 const getInfo = () => {
     getUerInfo({
         user_name: leftFrom.value.username,
-    }).then<Result>(res => {
+    }).then<Result>((res: any) => {
         console.log(res);
     });
 };
@@ -279,7 +279,7 @@ const addFriend = () => {
         user_id: friend.value.user_id,
         user_friends_name: friend.value.user_friends_name,
         user_friends_id: friend.value.user_friends_id,
-    }).then<Result>(res => {
+    }).then(res => {
         console.log(res);
     });
 };
@@ -316,28 +316,34 @@ const getFriend = () => {
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0);
+
     .onLine-game-login {
         padding: 10px;
+
         //flex: 1;
         .onLine-game-login-main {
             display: flex;
             width: 160px;
             margin-top: 20px;
             flex-direction: column;
+
             .friendsList {
                 height: 300px;
                 margin-top: 10px;
+
                 .friendsList-title {
                     margin: 0;
                     font-size: 16px;
                     font-weight: 500;
                 }
+
                 .friendsList-ul {
                     height: 300px;
                     margin: 0;
                     padding: 0;
                     list-style-type: none;
                     overflow-y: auto;
+
                     .friendsList-li {
                         padding: 0;
                         margin: 2px 0;
@@ -354,6 +360,7 @@ const getFriend = () => {
         padding: 0 0 0 10px;
         height: 100%;
         width: 100%;
+
         .onLine-game-input-main {
             height: 100%;
         }
@@ -361,6 +368,7 @@ const getFriend = () => {
 
     .onLine-game-sidebar {
         width: 200px;
+
         .onlineNumber {
             font-size: 14px;
             font-weight: 800;

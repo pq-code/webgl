@@ -1,8 +1,17 @@
 <template>
-    <div class="frontPage" @click="frontPage">
+    <div class="frontPage"
+         @click="frontPage">
         <div class="frontPageTile">这是一个首页</div>
         <threeHome />
     </div>
+    <div class="bottom">
+        <a href="https://beian.miit.gov.cn"
+           style="text-decoration:none"
+           class="home-footertypeface3">
+            湘ICP备2022002786号
+        </a>
+    </div>
+
 </template>
 
 <script setup lang="ts">
@@ -22,8 +31,12 @@ const frontPage = function () {
 .frontPage {
     width: 100%;
     height: 100vh;
-    //background-size: 1em 1em;
-    //background-image: linear-gradient(to bottom right, #ff7206, #ff4120);
+
+    .bottom {
+        bottom: 0;
+        color: #000;
+    }
+
     .frontPageTile {
         background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
         -webkit-background-clip: text;
@@ -36,5 +49,6 @@ const frontPage = function () {
         left: 60%;
         cursor: pointer;
     }
+
 }
 </style>

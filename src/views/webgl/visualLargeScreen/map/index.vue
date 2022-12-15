@@ -1,5 +1,6 @@
 <template>
-    <div class="map-content" id="uuid"></div>
+    <div class="map-content"
+         :id="uuid"></div>
 </template>
 
 <script setup>
@@ -16,7 +17,9 @@ const props = defineProps({
     },
     center: {
         type: Array,
-        default: [120.114195, 30.291225],
+        default () {
+            return [120.114195, 30.291225]
+        }
     },
     viewMode: {
         type: String,
@@ -28,11 +31,11 @@ const props = defineProps({
     },
     plugins: {
         type: Array,
-        default: [],
+        default: () => [],
     },
     parameters: {
         type: Object,
-        default: {},
+        default: () => { },
     },
 });
 
@@ -40,7 +43,7 @@ let map, AMap;
 
 const initMap = () => {
     AMapLoader.load({
-        key: 'f9f991f311b1b9e73e78b1c05af9c683',
+        key: '6b3517521997557d2f7ea5dc8ddf9bb1',
         version: '2.0',
         plugin: props.plugins,
     }).then(amap => {

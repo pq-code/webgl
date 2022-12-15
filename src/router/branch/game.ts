@@ -15,6 +15,11 @@ const game = [
                 name: 'game.multiplayerOnline',
                 component: () => import('@/views/game/multiplayerOnline/index.vue'),
             },
+            {
+                path: '/game/drawingBoard',
+                name: 'game.drawingBoard',
+                component: () => import('@/views/game/drawingBoard/index.vue'),
+            },
         ],
         meta: { hidden: false, title: 'game' },
     },

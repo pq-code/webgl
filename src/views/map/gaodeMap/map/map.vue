@@ -1,11 +1,7 @@
-<template>
-    <div class="map-content"
-         :id="uuid"></div>
-</template>
-
 <script setup>
 import AMapLoader from '@amap/amap-jsapi-loader';
 import { guid } from '@/utils/index';
+import { nextTick } from 'vue';
 const props = defineProps({
     zoom: {
         type: Number,
@@ -40,7 +36,7 @@ const props = defineProps({
         }
     },
 });
-
+// 地图初始化
 let map, AMap;
 let uuid = guid();
 const initMap = () => {
@@ -60,8 +56,18 @@ const initMap = () => {
         });
     });
 };
-initMap();
+nextTick(() => {
+    initMap();
+})
+
+// 绘制
+
 </script>
+
+<template>
+    <div class="map-content"
+         :id="uuid"></div>
+</template>
 
 <style lang="less" scoped>
 .map-content {

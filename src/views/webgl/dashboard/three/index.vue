@@ -1,5 +1,6 @@
 <template>
-    <div id="visualLargeScreen" class="visualLargeScreen" />
+    <div id="visualLargeScreen"
+         class="visualLargeScreen" />
 </template>
 
 <script setup>
@@ -66,7 +67,7 @@ let onWindowResize = function (w, h) {
 
 // window.addEventListener('resize', onWindowResize);
 
-function animation(time) {
+function animation (time) {
     let mesh = scene.getObjectByName('Earth');
     if (mesh) mesh.rotation.y = time / 2600;
     renderer.render(scene, camera);

@@ -5,6 +5,7 @@ import webgl from "./branch/webgl";
 import pmaoUI from "./branch/pmaoui";
 import pmaoUIhome from "./branch/pmao-ui"
 import game from "./branch/game"
+import map from "./branch/map"
 // import three from "./branch/three";
 
 const routes = [
@@ -25,20 +26,21 @@ const routes = [
             ...webgpu,
             ...webgl,
             ...pmaoUI,
-            ...game
+            ...game,
+            ...map
             // ...three,
         ],
         meta: { hidden: false, title: "首页" },
     },
 
     ...pmaoUIhome,
-    {
-        path: "/visualLargeScreen2",
-        component: () => import(/* webpackChunkName: "about" */ "../views/webgl/visualLargeScreen/index.vue"),
-        name: "forzaHorizonScenes",
-        // leaf: true,//只有一个节点
-        meta: { hidden: false, title: "visualLargeScreen" },
-    },
+    // {
+    //     path: "/visualLargeScreen2",
+    //     component: () => import(/* webpackChunkName: "about" */ "../views/webgl/visualLargeScreen/index.vue"),
+    //     name: "forzaHorizonScenes",
+    //     // leaf: true,//只有一个节点
+    //     meta: { hidden: false, title: "visualLargeScreen" },
+    // },
     // {
     //     path: "/dashboard",
     //     component: () => import(/* webpackChunkName: "about" */ "../views/webgl/dashboard/index.vue"),

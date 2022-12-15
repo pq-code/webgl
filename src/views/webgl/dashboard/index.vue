@@ -5,7 +5,7 @@
             <div class="header-title">DOM</div>
         </div>
         <!-- 地图 -->
-        <map class="map"></map>
+        <Map class="map"></Map>
         <!-- 左 -->
         <div class="left">
             <dataFeft ref="dataFeftRef"></dataFeft>
@@ -15,14 +15,14 @@
             <dataRight ref="dataRightRef"></dataRight>
         </div>
         <!-- 中间上 -->
-        <div class="top" v-if="isTop" id="top">
-            <Three
-                :width="threeWidth"
-                :height="threeHeight"
-                ref="visualLargeScreenThree"
-                id="visualLargeScreenThree"
-                class="visualLargeScreenThree"
-            />
+        <div class="top"
+             v-if="isTop"
+             id="top">
+            <Three :width="threeWidth"
+                   :height="threeHeight"
+                   ref="visualLargeScreenThree"
+                   id="visualLargeScreenThree"
+                   class="visualLargeScreenThree" />
         </div>
         <!-- 中间下 -->
         <div class="bottom"></div>
@@ -33,7 +33,7 @@
 import { ref } from 'vue';
 import dataFeft from './left.vue';
 import dataRight from './right.vue';
-import map from './map/index.vue';
+import Map from './map/index.vue';
 import Three from './three/index.vue';
 import { topheight } from './assets/css';
 
@@ -58,6 +58,7 @@ window.addEventListener('resize', onWindowResize);
 
 <style lang="less" scoped>
 @top-height: v-bind(topheight);
+
 // @top-height: 7vh;
 .dashboard-page {
     // width: 1920px;
@@ -74,6 +75,7 @@ window.addEventListener('resize', onWindowResize);
         width: 100vw;
         background: rgb(70, 117, 255);
         opacity: 0.8;
+
         .header-title {
             height: @top-height;
             font-size: 3vw;
@@ -84,10 +86,12 @@ window.addEventListener('resize', onWindowResize);
             align-items: center;
         }
     }
+
     .map {
         width: 100vw;
         flex: 1;
     }
+
     .left {
         width: 25vw;
         position: absolute;
@@ -96,6 +100,7 @@ window.addEventListener('resize', onWindowResize);
         background: yellow;
         opacity: 0.8;
     }
+
     .right {
         width: 25vw;
         position: absolute;
@@ -105,6 +110,7 @@ window.addEventListener('resize', onWindowResize);
         background: yellow;
         opacity: 0.8;
     }
+
     .top {
         width: 50vw;
         position: absolute;
@@ -115,6 +121,7 @@ window.addEventListener('resize', onWindowResize);
         background: white;
         opacity: 1;
     }
+
     .bottom {
         width: 50vw;
         position: absolute;
