@@ -1,4 +1,3 @@
-
 export const guid = () => {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
         const r = (Math.random() * 16) | 0,
@@ -7,3 +6,13 @@ export const guid = () => {
     });
 };
 
+export const debounce = (fn: any, delay = 300) => {
+    debugger;
+    let timer = 0;
+    if (timer) {
+        clearTimeout(timer);
+    }
+    timer = setTimeout(() => {
+        fn();
+    }, delay);
+};

@@ -1,122 +1,154 @@
+<script setup lang='ts'>
+import { ref } from 'vue';
+import { Search } from '@element-plus/icons-vue'
+import screenfull from 'screenfull';
+import { debounce } from '../../utils/index';
+
+
+const fn = function (fnName: string) {
+    if (screen) {
+        if (screenfull.isEnabled) {
+            const element: any = document.getElementById('main');
+            screenfull.request(element);
+        }
+    }
+};
+
+const data = ref({
+    search: '',
+    homeScreen: [],
+    searchSelect: [],
+    iconUl: [
+        { icon: 'icon-quanping', fn: 'screen' },
+        { icon: 'icon-quanping', fn: 'screen' },
+    ]
+})
+
+const cache = (e: string) => {
+    data.value.homeScreen.push(e)
+    console.log(data.value.homeScreen)
+    sessionStorage.setItem('homeScreen', data.value.homeScreen);
+}
+
+const homeScreenFn = (e: string) => {
+    
+}
+
+</script>
 <template>
     <div class="honeContainer">
-        <div class="homeHeard">
-            <div class="homeHeard-left">
-
-            </div>
-            <div class="homeHeard-right">
-                <div class="homeHeard-icon">
-                    <i class="iconfont icon-quanping"
-                       @click="screen" />
-                </div>
-                <div class="user-info">
-
-                </div>
-            </div>
+        <div class="honeContainer-side">
         </div>
-        <div class="homeCenter">
-            <div class="hemeLeft">
-                <homeSidebar />
+        <div class="honeContainer-main">
+            <div class="honeContainer-main-heard">
+                <div class="homeHeard-left">
+                    <el-input v-model="data.search"
+                              class="w-50 m-2"
+                              placeholder="搜索"
+                              @input="homeScreenFn(data.search)">
+                        <template #prefix>
+                            <el-icon class="el-input__icon">
+                                <search />
+                            </el-icon>
+                        </template>
+                    </el-input>
+                </div>
+                <div class="homeHeard-right">
+                    <ol class="homeHeard-icon">
+                        <li v-for="item of data.iconUl">
+                            <i :class="['iconfont', item.icon]"
+                               @click="fn(item.fn)"></i>
+                        </li>
+                        <div class="user-info">
+
+                        </div>
+                    </ol>
+                </div>
             </div>
             <div id="main"
-                 class="hemeMain">
+                 class="honeContainer-main-center">
                 <router-view />
             </div>
         </div>
     </div>
 </template>
-
-<script lang="ts" setup>
-import { ref, reactive } from 'vue';
-import { storeToRefs } from 'pinia';
-import { useStore } from '../../store/index';
-import { ArrowLeft } from '@element-plus/icons-vue';
-import homeSidebar from './homeSidebar.vue';
-import screenfull from 'screenfull';
-
-const mainStore = useStore();
-const { count } = storeToRefs(mainStore);
-console.log(count.value);
-
-const screen = function () {
-    if (screenfull.isEnabled) {
-        const element: any = document.getElementById('main');
-        screenfull.request(element);
-    }
-};
-
-const goBack = () => {
-    console.log('go back');
-};
-</script>
-
-<style lang="less" scoped>
+<style  lang="less" scoped>
 .honeContainer {
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
-    .homeHeard {
-        display: flex;
-        flex: 1 0 50px;
-        width: 100%;
-        background-color: #ffffff;
-        z-index: 1001;
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-
-        .homeHeard-left {
-            width: 100%;
-        }
-
-        .homeHeard-right {
-            display: flex;
-            float: right;
-            line-height: 50px;
-
-            .user-info {
-                margin: 7px 10px 0 10px;
-                height: 36px;
-                width: 36px;
-                border-radius: 50%;
-                background-color: #0077aa;
-                cursor: pointer;
-            }
-
-            .homeHeard-icon {
-                width: 50px;
-                height: 50px;
-                cursor: pointer;
-                text-align: center;
-
-                .iconfont {
-                    font-size: 26px;
-                }
-            }
-        }
+    .honeContainer-side {
+        width: 80px;
+        background-color: #f5f6f7;
     }
 
-    .homeCenter {
+    .honeContainer-main {
+        flex: 1;
         width: 100%;
-        height: calc(100% - 50px);
+        background-color: rgb(255, 255, 255);
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
 
-        .hemeLeft {
-            flex: 0 0 220px;
-            width: 160px;
-            height: 100%;
-            z-index: 1000;
-            overflow: hidden;
-            background-color: #ffffff;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-            // border-right: 1px solid #ffffff;
+        .honeContainer-main-heard {
+            height: 60px;
+            background-color: rgb(238, 238, 238);
+            display: flex;
+            flex-direction: row;
+            // padding: 0 10px;
+            padding: 0px 24px;
+            justify-content: space-between;
+
+            .homeHeard-left {
+                width: 40%;
+                display: flex;
+                align-items: center;
+
+                .el-input__icon {
+                    color: rgb(35, 35, 35);
+                }
+            }
+
+            .homeHeard-right {
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                .homeHeard-icon {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    list-style: none;
+                    margin-left: auto;
+                    flex: 0 0 auto;
+
+                    .user-info {
+                        margin: 0 10px;
+                        height: 26px;
+                        width: 26px;
+                        border-radius: 50%;
+                        background-color: #2ed7fd;
+                        cursor: pointer;
+                    }
+
+                    li {
+                        margin-left: 8px;
+                    }
+
+                    .iconfont {
+                        font-size: 26px;
+                    }
+                }
+
+            }
         }
 
-        .hemeMain {
-            //width: 100%;
-            //height: 100%;
-            flex: 1;
+        .honeContainer-main-center {
+            overflow: auto;
+            // flex: 1;
         }
     }
 }

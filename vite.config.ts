@@ -15,6 +15,12 @@ import compressPlugin from 'vite-plugin-compression'; //静态资源压缩
 export default defineConfig(({ command }) => {
     return {
         lintOnSave: false, //检查命名规范
+        devServer: {
+            overlay: {
+                warning: false,
+                errors: false,
+            },
+        },
         plugins: [
             vue(),
             compressPlugin({

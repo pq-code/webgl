@@ -15,13 +15,13 @@
 </template>
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import { leftDataOne } from './data/leftOne';
-import { leftDataTwo } from './data/leftTwo';
+// import { leftDataOne } from './data/leftOne';
+// import { leftDataTwo } from './data/leftTwo';
 import { leftTitleSize, topheight } from './assets/css';
 
 onMounted(() => {
-    leftDataOne();
-    leftDataTwo();
+    // leftDataOne();
+    // leftDataTwo();
 });
 
 defineExpose({});

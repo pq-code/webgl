@@ -19,7 +19,7 @@ const routes = [
         path: "/dashboard",
         component: () => import(/* webpackChunkName: "about" */ "../views/home/home.vue"),
         name: "dashboard",
-        redirect: '/lingo3D',
+        redirect: '/map',
         // leaf: true,//只有一个节点
         children: [
             ...lingo3D,

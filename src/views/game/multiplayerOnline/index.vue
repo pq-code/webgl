@@ -230,14 +230,14 @@ const loging = () => {
 const establishSocket = (user_id: any) => {
     socketUtils.value = new SocketUtils(user_id);
     socket.value = socketUtils.value.linkStart();
-    // 接收全域信息
-    socket.value = socketUtils.value.socket.on('broadcast', (e: Array<object>) => {
-        onlineNumber.value = e.NumberOnline;
-    });
-    // 接收信息
-    socket.value = socketUtils.value.socket.on('fresh-message', (e: object) => {
-        console.log(e.id, e.chatList);
-    });
+    // // 接收全域信息
+    // socket.value = socketUtils.value.socket.on('broadcast', (e: Array<object>) => {
+    //     onlineNumber.value = e.NumberOnline;
+    // });
+    // // 接收信息
+    // socket.value = socketUtils.value.socket.on('fresh-message', (e: object) => {
+    //     console.log(e.id, e.chatList);
+    // });
 };
 // 发送消息
 const SendOut = () => {
@@ -261,7 +261,7 @@ const SendOut = () => {
 const getInfo = () => {
     getUerInfo({
         user_name: leftFrom.value.username,
-    }).then<Result>((res: any) => {
+    }).then((res: any) => {
         console.log(res);
     });
 };
@@ -290,7 +290,7 @@ const deleteFriend = () => {
         user_id: friend.value.user_id,
         user_friends_name: friend.value.user_friends_name,
         user_friends_id: friend.value.user_friends_id,
-    }).then<Result>((res: any) => {
+    }).then((res: any) => {
         console.log(res);
     });
 };
@@ -299,7 +299,7 @@ const getFriend = () => {
     getFriends({
         user_name: friend.value.user_name,
         user_id: friend.value.user_id,
-    }).then<Result>(res => {
+    }).then(res => {
         console.log(res);
     });
 };
