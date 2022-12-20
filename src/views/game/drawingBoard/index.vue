@@ -78,6 +78,9 @@ nextTick(() => {
             .drawingBoard-tool-li {
                 height: 47px;
                 background-color: rgb(234, 236, 238);
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }

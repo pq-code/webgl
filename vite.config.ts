@@ -13,8 +13,8 @@ import compressPlugin from 'vite-plugin-compression'; //静态资源压缩
 //   "@": pathResolve("src")
 // };
 export default defineConfig(({ command }) => {
-    const prodMock = true;
     return {
+        lintOnSave: false, //检查命名规范
         plugins: [
             vue(),
             compressPlugin({
@@ -48,7 +48,7 @@ export default defineConfig(({ command }) => {
                     rewrite: path => path.replace(/^\/api/, '/'),
                 },
             },
-            https: true,
+            https: false,
         },
         css: {
             // css预处理器

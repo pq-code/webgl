@@ -6,7 +6,8 @@
             </div>
             <div class="homeHeard-right">
                 <div class="homeHeard-icon">
-                    <i class="iconfont icon-quanping" @click="screen"/>
+                    <i class="iconfont icon-quanping"
+                       @click="screen" />
                 </div>
                 <div class="user-info">
 
@@ -17,7 +18,8 @@
             <div class="hemeLeft">
                 <homeSidebar />
             </div>
-            <div id="main" class="hemeMain">
+            <div id="main"
+                 class="hemeMain">
                 <router-view />
             </div>
         </div>
@@ -54,6 +56,7 @@ const goBack = () => {
     height: 100vh;
     display: flex;
     flex-direction: column;
+
     .homeHeard {
         display: flex;
         flex: 1 0 50px;
@@ -61,37 +64,44 @@ const goBack = () => {
         background-color: #ffffff;
         z-index: 1001;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+
         .homeHeard-left {
             width: 100%;
         }
-        .homeHeard-right{
+
+        .homeHeard-right {
             display: flex;
             float: right;
             line-height: 50px;
+
             .user-info {
                 margin: 7px 10px 0 10px;
                 height: 36px;
                 width: 36px;
                 border-radius: 50%;
                 background-color: #0077aa;
-                cursor:pointer;
+                cursor: pointer;
             }
+
             .homeHeard-icon {
                 width: 50px;
                 height: 50px;
                 cursor: pointer;
-                text-align:center;
+                text-align: center;
+
                 .iconfont {
                     font-size: 26px;
                 }
             }
         }
     }
+
     .homeCenter {
         width: 100%;
-        height: 100%;
+        height: calc(100% - 50px);
         display: flex;
         flex-direction: row;
+
         .hemeLeft {
             flex: 0 0 220px;
             width: 160px;
@@ -102,6 +112,7 @@ const goBack = () => {
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
             // border-right: 1px solid #ffffff;
         }
+
         .hemeMain {
             //width: 100%;
             //height: 100%;

@@ -26,7 +26,6 @@ export const generateRectangleMeta = (startPos: [number, number], w: number, h: 
     }
 };
 
-// event.ts
 import { onMounted, onUnmounted } from 'vue';
 
 export function useEventListener(
@@ -38,7 +37,6 @@ export function useEventListener(
     onUnmounted(() => target.removeEventListener(event, callback));
 }
 
-// mouse.ts
 import { ref } from 'vue';
 
 export function useMouse(target: HTMLElement | Window, callback?: (x: number, y: number) => void) {

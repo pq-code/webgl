@@ -290,7 +290,7 @@ const deleteFriend = () => {
         user_id: friend.value.user_id,
         user_friends_name: friend.value.user_friends_name,
         user_friends_id: friend.value.user_friends_id,
-    }).then<Result>(res => {
+    }).then<Result>((res: any) => {
         console.log(res);
     });
 };

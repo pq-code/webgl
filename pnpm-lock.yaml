@@ -22,7 +22,6 @@ specifiers:
   prettier: ^2.7.1
   screenfull: ^6.0.1
   socket.io-client: ^4.5.2
-  sortablejs: ^1.15.0
   style-resources-loader: ^1.5.0
   t: ^0.5.1
   three: ^0.142.0
@@ -46,7 +45,6 @@ dependencies:
   pinia: 2.0.28_prq2uz4lho2pwp6irk4cfkrxwu
   screenfull: 6.0.2
   socket.io-client: 4.5.4
-  sortablejs: 1.15.0
   t: 0.5.1
   three: 0.142.0
   vite-plugin-compression: 0.5.1_vite@2.9.15
@@ -2394,10 +2392,6 @@ packages:
       debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /sortablejs/1.15.0:
-    resolution: {integrity: sha512-bv9qgVMjUMf89wAvM6AxVvS/4MX3sPeN0+agqShejLU5z5GX4C75ow1O2e5k4L6XItUyAK3gH6AxSbXrOM5e8w==}
     dev: false
 
   /source-map-js/1.0.2:
