@@ -1,13 +1,13 @@
 const webgpu = [
     {
         path: '/webgpu',
-        component: () => import(/* webpackChunkName: "about" */ '../../views/webgpu/index.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../../pages/webgpu/index.vue'),
         name: 'webgpu',
         children: [
             {
                 path: '/webgpu',
                 component: () =>
-                    import(/* webpackChunkName: "about" */ '../../views/webgpu/index.vue'),
+                    import(/* webpackChunkName: "about" */ '../../pages/webgpu/index.vue'),
             },
         ],
         meta: { hidden: false, title: 'webgpu' },

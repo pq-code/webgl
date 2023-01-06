@@ -45,12 +45,7 @@ const dataFeftRef = ref();
 const dataRightRef = ref();
 
 const onWindowResize = () => {
-    threeWidth.value = window.innerWidth * 0.5;
-    threeHeight.value = window.innerHeight * 0.53;
-    if (visualLargeScreenThree.value)
-        visualLargeScreenThree.value.onWindowResize(threeWidth.value, threeHeight.value);
-    // dataFeftRef.value.onWindowResize();
-    // dataRightRef.value.value.onWindowResize();
+    console.log(window.innerWidth);
 };
 
 window.addEventListener('resize', onWindowResize);

@@ -1,24 +1,24 @@
 const game = [
     {
         path: '/game',
-        component: () => import('@/views/game/index.vue'),
+        component: () => import('@/pages/game/index.vue'),
         name: 'game',
         redirect: '/game/sl',
         children: [
             {
                 path: '/game/sl',
                 name: 'game.sl',
-                component: () => import('@/views/game/sl/index.vue'),
+                component: () => import('@/pages/game/sl/index.vue'),
             },
             {
                 path: '/game/multiplayerOnline',
                 name: 'game.multiplayerOnline',
-                component: () => import('@/views/game/multiplayerOnline/index.vue'),
+                component: () => import('@/pages/game/multiplayerOnline/index.vue'),
             },
             {
                 path: '/game/drawingBoard',
                 name: 'game.drawingBoard',
-                component: () => import('@/views/game/drawingBoard/index.vue'),
+                component: () => import('@/pages/game/drawingBoard/index.vue'),
             },
         ],
         meta: { hidden: false, title: 'game' },

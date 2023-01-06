@@ -7,7 +7,6 @@ export const guid = () => {
 };
 
 export const debounce = (fn: any, delay = 300) => {
-    debugger;
     let timer = 0;
     if (timer) {
         clearTimeout(timer);

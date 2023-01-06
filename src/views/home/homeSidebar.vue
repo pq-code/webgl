@@ -1,15 +1,15 @@
 <template>
-    <el-menu :router="true" class="menu">
-        <el-sub-menu
-            :key="item.router + index"
-            :index="item.router"
-            v-for="(item, index) of pdata.dataList"
-        >
+    <el-menu :router="true"
+             class="menu">
+        <el-sub-menu :key="item.router + index"
+                     :index="item.router"
+                     v-for="(item, index) of pdata.dataList">
             <template #title>
-<!--                <i class="iconfont icon-yingyong margin4"></i>-->
                 {{ item.title }}
             </template>
-            <el-menu-item :key="e.router" :index="e.router" v-for="e of item.options">
+            <el-menu-item :key="e.router"
+                          :index="e.router"
+                          v-for="e of item.options">
                 {{ e.title }}
             </el-menu-item>
         </el-sub-menu>
@@ -23,4 +23,6 @@ let pdata = reactive({
     dataList: navigation,
 });
 </script>
-<style scoped></style>
+<style scoped>
+
+</style>

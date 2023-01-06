@@ -11,13 +11,15 @@ let token;
 
 const service: AxiosInstance = axios.create({
     baseURL: '/',
-    timeout: 30000,
+    timeout: 1000 * 60 * 1,
 });
 
 /* 请求拦截器 */
 service.interceptors.request.use(
     (config: AxiosRequestConfig) => {
         token = sessionStorage.getItem('token');
+        console.log(config);
+        debugger;
         if (token && config && config?.headers) {
             config.headers.Authorization = token;
         }
@@ -90,3 +92,6 @@ export const http = {
         return service.delete(url, config);
     },
 };
+
+// 刷新Token
+const refreshToken = () => {};

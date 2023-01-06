@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { Search } from '@element-plus/icons-vue'
 import screenfull from 'screenfull';
 import { debounce } from '../../utils/index';
-
+import Pside from '@/components/p-side/side.vue'
 
 const fn = function (fnName: string) {
     if (screen) {
@@ -31,13 +31,18 @@ const cache = (e: string) => {
 }
 
 const homeScreenFn = (e: string) => {
-    
+
 }
 
 </script>
 <template>
     <div class="honeContainer">
         <div class="honeContainer-side">
+            <Pside>
+                <template #sideHeadLi>
+                    <button>111</button>
+                </template>
+            </Pside>
         </div>
         <div class="honeContainer-main">
             <div class="honeContainer-main-heard">
@@ -72,7 +77,7 @@ const homeScreenFn = (e: string) => {
         </div>
     </div>
 </template>
-<style  lang="less" scoped>
+<style lang="less" scoped>
 .honeContainer {
     width: 100vw;
     height: 100vh;
@@ -80,13 +85,12 @@ const homeScreenFn = (e: string) => {
     flex-direction: row;
 
     .honeContainer-side {
-        width: 80px;
+        width: 260px;
         background-color: #f5f6f7;
     }
 
     .honeContainer-main {
         flex: 1;
-        width: 100%;
         background-color: rgb(255, 255, 255);
         display: flex;
         flex-direction: column;
@@ -96,7 +100,6 @@ const homeScreenFn = (e: string) => {
             background-color: rgb(238, 238, 238);
             display: flex;
             flex-direction: row;
-            // padding: 0 10px;
             padding: 0px 24px;
             justify-content: space-between;
 
