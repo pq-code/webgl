@@ -1,5 +1,6 @@
 <template>
-    <div id="panoramiciewing" class="panoramiciewing" />
+    <div id="panoramiciewing"
+         class="panoramiciewing" />
 </template>
 
 <script setup>
@@ -51,7 +52,7 @@ let onWindowResize = function () {
 
 window.addEventListener('resize', onWindowResize);
 
-function animation(time) {
+function animation (time) {
     // const mesh = scene.getObjectByName( 'meshKnot' );
     // mesh.rotation.y = time / 1000;
     renderer.render(scene, camera);
@@ -93,8 +94,8 @@ const mshStdFloor = new THREE.Mesh(geoFloor, matStdFloor);
 scene.add(mshStdFloor);
 </script>
 
-<style scoped>
-. panoramiciewing {
+<style scoped lang="less">
+.panoramiciewing {
     background-image: linear-gradient(rgba(3, 192, 60, 0.3) 1px, transparent 1px),
         linear-gradient(90deg, rgba(3, 192, 60, 0.3) 1px, transparent 1px);
     background-size: 1em 1em;

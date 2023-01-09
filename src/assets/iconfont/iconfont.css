@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3772569 */
-  src: url('iconfont.woff2?t=1668505432984') format('woff2'),
-       url('iconfont.woff?t=1668505432984') format('woff'),
-       url('iconfont.ttf?t=1668505432984') format('truetype');
+  src: url('iconfont.woff2?t=1673004934952') format('woff2'),
+       url('iconfont.woff?t=1673004934952') format('woff'),
+       url('iconfont.ttf?t=1673004934952') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,150 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-right:before {
+  content: "\e743";
+}
+
+.icon-arrow-left:before {
+  content: "\e744";
+}
+
+.icon-arrow-up:before {
+  content: "\e745";
+}
+
+.icon-connections:before {
+  content: "\e74c";
+}
+
+.icon-editor1:before {
+  content: "\e752";
+}
+
+.icon-link:before {
+  content: "\e756";
+}
+
+.icon-resonserate:before {
+  content: "\e764";
+}
+
+.icon-return:before {
+  content: "\e765";
+}
+
+.icon-arrow-down:before {
+  content: "\e7b2";
+}
+
+.icon-Tab_kehuliebiao:before {
+  content: "\e656";
+}
+
+.icon-Tab_kehuxinximoban:before {
+  content: "\e657";
+}
+
+.icon-Tab_ruanjiandingdan:before {
+  content: "\e658";
+}
+
+.icon-Tab_ruanjianguanli:before {
+  content: "\e659";
+}
+
+.icon-Tab_xiaofeitongji:before {
+  content: "\e65a";
+}
+
+.icon-Tab_lianxijihua:before {
+  content: "\e65b";
+}
+
+.icon-Tab_xiazaizhongxin:before {
+  content: "\e65c";
+}
+
+.icon-Tab_yonghuguanli:before {
+  content: "\e65d";
+}
+
+.icon-Tab_zhanghuzonglan:before {
+  content: "\e65e";
+}
+
+.icon-Tab_zidingyiziduan:before {
+  content: "\e65f";
+}
+
+.icon-Tab_zuoxiguanli:before {
+  content: "\e660";
+}
+
+.icon-Tab_dishihuashu:before {
+  content: "\e661";
+}
+
+.icon-Tab_hujiaozhongxinguanli:before {
+  content: "\e662";
+}
+
+.icon-Tab_shujujiankong:before {
+  content: "\e663";
+}
+
+.icon-Tab_shouye:before {
+  content: "\e664";
+}
+
+.icon-Tab_goumaifuwu:before {
+  content: "\e665";
+}
+
+.icon-Tab_lishijilu:before {
+  content: "\e666";
+}
+
+.icon-Tab_anliku:before {
+  content: "\e667";
+}
+
+.icon-Tab_zhijianpeizhi:before {
+  content: "\e668";
+}
+
+.icon-Tab_huadanguanli:before {
+  content: "\e669";
+}
+
+.icon-Tab_shezhi:before {
+  content: "\e66a";
+}
+
+.icon-Tab_fuwuqiIP:before {
+  content: "\e66b";
+}
+
+.icon-right:before {
+  content: "\e6a3";
+}
+
+.icon-Left:before {
+  content: "\e611";
+}
+
+.icon-hanbaocaidanzhedie:before {
+  content: "\e62f";
+}
+
+.icon-zhedie-zhankai:before {
+  content: "\e717";
+}
+
+.icon-zhedie-shouqi:before {
+  content: "\e718";
 }
 
 .icon-quanping:before {

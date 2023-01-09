@@ -4,7 +4,9 @@ import { Search } from '@element-plus/icons-vue'
 import screenfull from 'screenfull';
 import { debounce } from '../../utils/index';
 import Pside from '@/components/p-side/side.vue'
+import { navigation } from './navigation'
 
+let lengthWidth = ref(window.innerWidth > 1000 ? true : false)
 const fn = function (fnName: string) {
     if (screen) {
         if (screenfull.isEnabled) {
@@ -24,23 +26,34 @@ const data = ref({
     ]
 })
 
-const cache = (e: string) => {
-    data.value.homeScreen.push(e)
-    console.log(data.value.homeScreen)
-    sessionStorage.setItem('homeScreen', data.value.homeScreen);
-}
+// const cache = (e: string) => {
+//     data.value.homeScreen.push(e)
+//     console.log(data.value.homeScreen)
+//     sessionStorage.setItem('homeScreen', data.value.homeScreen);
+// }
 
 const homeScreenFn = (e: string) => {
 
 }
 
+
+let onWindowResize = () => {
+    return lengthWidth.value = window.innerWidth >= 1000
+};
+
+window.addEventListener('resize', onWindowResize);
+
 </script>
 <template>
     <div class="honeContainer">
-        <div class="honeContainer-side">
-            <Pside>
+        <div class="honeContainer-side"
+             :style="{ 'width': lengthWidth ? '220px' : '80px' }">
+            <Pside :lengthWidth="lengthWidth"
+                   :dataList="navigation">
                 <template #sideHeadLi>
-                    <button>111</button>
+                    <div class="user-info">
+
+                    </div>
                 </template>
             </Pside>
         </div>
@@ -85,8 +98,15 @@ const homeScreenFn = (e: string) => {
     flex-direction: row;
 
     .honeContainer-side {
-        width: 260px;
+        // width: 260px;
         background-color: #f5f6f7;
+
+        .user-info {
+            height: 46px;
+            width: 46px;
+            border-radius: 50%;
+            background-color: #2ed7fd;
+        }
     }
 
     .honeContainer-main {
@@ -119,7 +139,7 @@ const homeScreenFn = (e: string) => {
                 align-items: center;
 
                 .homeHeard-icon {
-                    height: 100%;
+                    // height: 100%;
                     display: flex;
                     flex-direction: row;
                     -webkit-box-align: center;

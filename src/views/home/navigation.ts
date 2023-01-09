@@ -2,6 +2,7 @@ export const navigation = [
     {
         title: 'lingo3D',
         router: '/lingo3D',
+        icon: 'icon-wenjianjia',
         options: [
             {
                 title: 'lingo3D',
@@ -16,6 +17,7 @@ export const navigation = [
     {
         title: 'webgpu',
         router: '/webgpu',
+        icon: 'icon-wenjianjia',
         options: [
             {
                 title: 'webgpu',
@@ -26,6 +28,7 @@ export const navigation = [
     {
         title: 'webgl',
         router: '/webgl',
+        icon: 'icon-wenjianjia',
         options: [
             {
                 title: 'trajectoryMotion',
@@ -52,6 +55,7 @@ export const navigation = [
     {
         title: 'UI',
         router: '/pmaoUI',
+        icon: 'icon-Tab_ruanjianguanli',
         options: [
             {
                 title: 'pmaoUI',
@@ -62,6 +66,7 @@ export const navigation = [
     {
         title: 'game',
         router: '/game',
+        icon: 'icon-yingyong',
         options: [
             {
                 title: 'sl',
@@ -80,6 +85,7 @@ export const navigation = [
     {
         title: 'map',
         router: '/map',
+        icon: 'icon-shuju',
         options: [
             {
                 title: 'gaodeMap',
