@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 import compressPlugin from 'vite-plugin-compression'; //静态资源压缩
-import visualizer from 'rollup-plugin-visualizer';
+// import visualizer from 'rollup-plugin-visualizer';
 // // 路径查找
 // const pathResolve = (dir: string): string => {
 //   return resolve(__dirname, ".", dir);
@@ -29,15 +29,16 @@ export default defineConfig(({ command }) => {
                 disable: false,
                 threshold: 10240,
                 algorithm: 'gzip',
-                deleteOriginFile: command !== 'serve', // 是否删除原始文件
+                deleteOriginFile: false, // 是否删除原始文件
+                // deleteOriginFile: command !== 'serve', // 是否删除原始文件
             }),
-             visualizer({
-                emitFile: true,//是否被触摸
-                filename: "test.html",//生成分析网页文件名
-                open: true,//在默认用户代理中打开生成的文件
-                gzipSize: true,//从源代码中收集 gzip 大小并将其显示在图表中
-                brotliSize: true,//从源代码中收集 brotli 大小并将其显示在图表中
-            })
+            //  visualizer({
+            //     emitFile: true,//是否被触摸
+            //     filename: "test.html",//生成分析网页文件名
+            //     open: true,//在默认用户代理中打开生成的文件
+            //     gzipSize: true,//从源代码中收集 gzip 大小并将其显示在图表中
+            //     brotliSize: true,//从源代码中收集 brotli 大小并将其显示在图表中
+            // })
         ],
         // 打包配置
         build: {
