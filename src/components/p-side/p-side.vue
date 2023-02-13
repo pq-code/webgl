@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import { onMounted, ref, useSlots, computed } from 'vue';
+import pDropDownButtonVue from '../p-dropDown/p-dropDownButton.vue';
 
 const props = defineProps({
     dataList: {
@@ -26,9 +27,11 @@ const props = defineProps({
 });
 
 const foldSwitch = ref(false) // 鼠标是否在侧边栏上
+const selectIndex = ref() // 选中的数据
+const buttonRefList = {}
+const oldSelect = ref()
 
 const emits = defineEmits(['lengthWidthFn'])
-
 
 // 判断slot是否有值
 const useSlotsFn = (e: string) => {
@@ -55,15 +58,27 @@ const lengthWidthFn = () => {
     return emits('lengthWidthFn', !props.lengthWidth)
 }
 // 下拉按钮
-const dropDown = () => {
-    debugger
+const dropDown = (index: number) => {
+    if (oldSelect.value) {
+        buttonRefList[oldSelect.value].uncheck()
+        oldSelect.value = `${index}_button`
+    } else {
+        oldSelect.value = `${index}_button`
+    }
 }
-
+// 动态ref
+const buttonRef = (el: any, key: string) => {
+    if (el) {
+        buttonRefList[key] = el
+    }
+}
 
 onMounted(() => {
 
 })
+
 </script>
+
 <template>
     <div class="p-side"
          @mouseleave="mouseleaveFn"
@@ -85,17 +100,11 @@ onMounted(() => {
             <div class="side-body-li"
                  v-else
                  v-for="(item, index) in dataList">
-                <button class="button"
-                        :style="{ 'justify-content': lengthWidth ? 'flex-start' : 'center' }">
-                    <i :class="['iconfont', item.icon]"></i>
-                    <div v-if="lengthWidth"
-                         style="margin-left: 10px;">{{ item.title }}</div>
-                    <div class="button-dropDown"
-                         @click="dropDown"
-                         v-if="item.options && item.options.length > 1">
-                        <i class="iconfont icon-arrow-down"></i>
-                    </div>
-                </button>
+                <pDropDownButtonVue :ref="(el) => buttonRef(el, `${index}_button`)"
+                                    :item="item"
+                                    :key="`${index}_button`"
+                                    :lengthWidth="lengthWidth"
+                                    @dropDown="dropDown(index)"></pDropDownButtonVue>
             </div>
         </div>
     </div>
@@ -125,39 +134,7 @@ onMounted(() => {
         }
 
         .side-body-li {
-            display: flex;
-            -webkit-box-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            align-items: center;
             width: 100%;
-            height: 50px;
-
-            .button {
-                cursor: pointer;
-                width: 100%;
-                height: 40px;
-                margin: 10px;
-                background: none;
-                border-style: none;
-                display: flex;
-                align-items: center;
-
-                .iconfont {
-                    font-size: 22px;
-                }
-
-                .button-dropDown {
-                    flex: 1;
-                    display: flex;
-                    justify-content: flex-end;
-                }
-            }
-
-            .button:hover {
-                border-radius: 4px;
-                background-color: rgb(215, 215, 215);
-            }
         }
     }
 }

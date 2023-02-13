@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { Search } from '@element-plus/icons-vue'
 import screenfull from 'screenfull';
 import { debounce } from '../../utils/index';
-import Pside from '@/components/p-side/side.vue'
+import Pside from '@/components/p-side/p-side.vue'
 import { navigation } from './navigation'
 
 let lengthWidth = ref(window.innerWidth > 1000 ? true : false)

@@ -1,10 +1,17 @@
-FROM node
-WORKDIR /app
-COPY package*.json /app/
-RUN npm install
-COPY . /app
-RUN npm run build
+# dockerfile
 
-FROM nginx
-COPY --from=0 /app/dist /usr/share/nginx/html
-COPY --from=0 /app/nginx.conf /etc/nginx/conf.d/default.conf
+FROM node:16-alpine3.15
+
+WORKDIR /home/app/
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 80
+
+ENTRYPOINT ["npm", "run"]
+
+CMD ["serve"]

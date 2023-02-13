@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
-import threeHome from './threeHome/index.vue';
+import threeHome from './firstScreen/index.vue';
 
 const router = useRouter();
 
@@ -29,7 +29,7 @@ const frontPage = function () {
 
 <style lang="less" scoped>
 .frontPage {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 
     .bottom {

@@ -7,8 +7,10 @@ import pmaoUIhome from "./branch/pmao-ui"
 import game from "./branch/game"
 import map from "./branch/map"
 // import three from "./branch/three";
+import firstScreenFn from "./firstScreenFn"
 
 const routes = [
+    // ...firstScreen,
     {
         path: "/",
         component: () => import(/* webpackChunkName: "about" */ "../views/home/frontPage.vue"),
@@ -32,7 +34,6 @@ const routes = [
         ],
         meta: { hidden: false, title: "首页" },
     },
-
     ...pmaoUIhome,
     // {
     //     path: "/visualLargeScreen2",
@@ -54,5 +55,8 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes
 })
-
+router.beforeEach((to, from, next) => {
+    // 随机首页
+    firstScreenFn(to, from, next)
+});
 export default router
